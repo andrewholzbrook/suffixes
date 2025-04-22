@@ -1,0 +1,69 @@
+{
+  "name": "suffixes",
+  "displayName": "Suffixes",
+  "description": "View and compare files in your project that share the same filename suffix. Useful for discovering architectural patterns like *.form.tsx or *.model.ts.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "suffixes.showMatches",
+        "title": "Show Suffix Matches",
+        "category": "Suffixes"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "suffixes.showMatches",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "clean": "rimraf out dist",
+    "build": "pnpm run clean && pnpm run compile",
+    "package": "pnpm run build && vsce package",
+    "publish": "pnpm run package && vsce publish",
+    "dev": "pnpm run watch"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.17.30",
+    "@types/vscode": "^1.99.1",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.8.3",
+    "@vscode/vsce": "^2.24.0"
+  },
+  "files": [
+    "out",
+    "src",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md"
+  ]
+}
