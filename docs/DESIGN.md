@@ -6,7 +6,7 @@ This is the main design document for the Suffixes extension.
 
 The goals of this application are thus:
 
-- Enable architectural efficiency by applying suffix naming strategies when following [DDD](https://en.wikipedia.org/wiki/Domain-driven_design).
+- Improve architectural clarity and efficiency in [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) projects through consistent management of suffix naming strategies.
 
 # Potential Future Extensions / Major Features
 
