@@ -1,7 +1,7 @@
 {
-  "name": "suffixes",
+  "name": "holzbrook.suffixes",
   "displayName": "Suffixes",
-  "description": "A VS Code extension for managing file suffixes",
+  "description": "Suffix-based file navigation",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.85.0"
@@ -10,33 +10,304 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:suffixes.showMatches"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "suffixes.showMatches",
-        "title": "Show Suffix Matches"
+        "command": "suffixes.showMatchesInFile",
+        "title": "Show Suffix Matches in File"
+      },
+      {
+        "command": "suffixes.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "suffixes.toggleNameSort",
+        "title": "Sort by Name",
+        "icon": "$(sort-precedence)"
+      },
+      {
+        "command": "suffixes.toggleCountSort",
+        "title": "Sort by Count",
+        "icon": "$(symbol-numeric)"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Suffixes",
+      "properties": {
+        "suffixes.enabledPatterns": {
+          "type": "array",
+          "default": [
+            ".dart"
+          ],
+          "description": "File patterns to enable suffix-based navigation for"
+        },
+        "suffixes.preferredSuffixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "List of preferred suffixes that will be prioritized when matching files."
+        },
+        "suffixes.favoritePrefixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "List of favorite prefixes that will be highlighted in the UI and prioritized in search results."
+        },
+        "suffixes.excludeFromIndex": {
+          "type": "array",
+          "default": [
+            "**/__pycache__/**",
+            "**/.dart_tool/**",
+            "**/.flutter-plugins-dependencies",
+            "**/.flutter-plugins",
+            "**/.git/**",
+            "**/.gitignore",
+            "**/.history/**",
+            "**/.idea/**",
+            "**/.metadata",
+            "**/.packages",
+            "**/.pub-cache/**",
+            "**/.pub/",
+            "**/.vs/**",
+            "**/.vscode/**",
+            "**/*.aab",
+            "**/*.ap_",
+            "**/*.apk",
+            "**/*.bak",
+            "**/*.cer",
+            "**/*.chopper.dart",
+            "**/*.class",
+            "**/*.config.dart",
+            "**/*.dex",
+            "**/*.DS_Store",
+            "**/*.env.*",
+            "**/*.env",
+            "**/*.freezed.dart",
+            "**/*.g.dart",
+            "**/*.gen.dart",
+            "**/*.gr.dart",
+            "**/*.gradle",
+            "**/*.gz",
+            "**/*.iml",
+            "**/*.injectable.dart",
+            "**/*.ipa",
+            "**/*.jar",
+            "**/*.jks",
+            "**/*.keystore",
+            "**/*.lock",
+            "**/*.log",
+            "**/*.mobileprovision",
+            "**/*.mocks.dart",
+            "**/*.module.dart",
+            "**/*.old",
+            "**/*.orig",
+            "**/*.p12",
+            "**/*.pbxproj",
+            "**/*.plist",
+            "**/*.properties",
+            "**/*.pyc",
+            "**/*.rar",
+            "**/*.reflectable.dart",
+            "**/*.rej",
+            "**/*.storyboard",
+            "**/*.swagger.dart",
+            "**/*.swp",
+            "**/*.tar",
+            "**/*.temp",
+            "**/*.tmp",
+            "**/*.xcconfig",
+            "**/*.xcodeproj/**",
+            "**/*.xcworkspace/**",
+            "**/*.zip",
+            "**/*~",
+            "**/CMakeLists.txt",
+            "**/android/.gradle/**",
+            "**/android/**/generated/**",
+            "**/android/app/**",
+            "**/android/app/build/**",
+            "**/android/app/debug/**",
+            "**/android/app/profile/**",
+            "**/android/app/release/**",
+            "**/android/app/src/debug/**",
+            "**/android/app/src/main/res/**",
+            "**/android/app/src/profile/**",
+            "**/android/app/src/release/**",
+            "**/android/captures/**",
+            "**/android/gradle/**",
+            "**/android/gradlew*",
+            "**/android/local.properties",
+            "**/build/**",
+            "**/coverage/**",
+            "**/dist/**",
+            "**/doc/api/",
+            "**/Flutter/ephemeral/**",
+            "**/generated_plugin_registrant.*",
+            "**/GeneratedPluginRegistrant.*",
+            "**/ios/.generated/",
+            "**/ios/.symlinks/**",
+            "**/ios/**/.sconsign.dblite",
+            "**/ios/**/.symlinks/",
+            "**/ios/**/.tags*",
+            "**/ios/**/.vagrant/",
+            "**/ios/**/*.mode1v3",
+            "**/ios/**/*.mode2v3",
+            "**/ios/**/*.moved-aside",
+            "**/ios/**/*.pbxuser",
+            "**/ios/**/*.perspectivev3",
+            "**/ios/**/*sync/",
+            "**/ios/**/build/**",
+            "**/ios/**/DerivedData/",
+            "**/ios/**/dgph",
+            "**/ios/**/Icon?",
+            "**/ios/**/Pods/",
+            "**/ios/**/profile",
+            "**/ios/**/xcuserdata",
+            "**/ios/Flutter/.last_build_id",
+            "**/ios/Flutter/**",
+            "**/ios/Flutter/ephemeral/**",
+            "**/ios/Flutter/Flutter.podspec",
+            "**/ios/Flutter/Generated.xcconfig",
+            "**/ios/Pods/**",
+            "**/ios/Runner.xcodeproj/**",
+            "**/ios/Runner.xcworkspace/**",
+            "**/ios/Runner/Assets.xcassets/**",
+            "**/ios/Runner/Base.lproj/**",
+            "**/linux/**/*.o",
+            "**/linux/**/*.so",
+            "**/linux/build/**",
+            "**/linux/Debug/**",
+            "**/linux/flutter/**",
+            "**/linux/Release/**",
+            "**/linux/runner/**",
+            "**/linux/snap/**",
+            "**/macos/**/.sconsign.dblite",
+            "**/macos/**/.symlinks/",
+            "**/macos/**/.tags*",
+            "**/macos/**/.vagrant/",
+            "**/macos/**/*.mode1v3",
+            "**/macos/**/*.mode2v3",
+            "**/macos/**/*.moved-aside",
+            "**/macos/**/*.pbxuser",
+            "**/macos/**/*.perspectivev3",
+            "**/macos/**/*sync/",
+            "**/macos/**/DerivedData/",
+            "**/macos/**/Icon?",
+            "**/macos/**/Pods/",
+            "**/macos/**/profile",
+            "**/macos/**/xcuserdata/**",
+            "**/macos/Flutter/**",
+            "**/macos/Flutter/ephemeral/**",
+            "**/macos/Runner/**",
+            "**/node_modules/**",
+            "**/temp/**",
+            "**/tmp/**",
+            "**/web/favicon.png",
+            "**/web/icons/**",
+            "**/web/manifest.json",
+            "**/web/version.json",
+            "**/windows/**/*.filters",
+            "**/windows/**/*.sln",
+            "**/windows/**/*.user",
+            "**/windows/**/*.vcxproj",
+            "**/windows/**/Debug/**",
+            "**/windows/**/Generated Files/**",
+            "**/windows/**/packages/**",
+            "**/windows/**/Profile/**",
+            "**/windows/**/Release/**",
+            "**/windows/flutter/**",
+            "**/windows/out/**",
+            "**/windows/runner/**"
+          ],
+          "description": "Patterns to exclude from file indexing"
+        },
+        "suffixes.excludeFromResults": {
+          "type": "array",
+          "default": [
+            ".dart",
+            ".d.ts"
+          ],
+          "description": "File extensions to exclude from suffix results (files will still be scanned but their extensions won't be shown in results)"
+        },
+        "suffixes.showTreeView": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the suffix groups in the explorer view"
+        },
+        "suffixes.showCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show CodeLens annotations for suffix matches"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "suffixes",
+          "title": "Suffixes",
+          "icon": "resources/suffixes.svg"
+        }
+      ]
+    },
+    "views": {
+      "suffixes": [
+        {
+          "id": "suffixes.groups",
+          "name": "Suffix Groups",
+          "icon": "resources/suffixes.svg"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "suffixes.refresh",
+          "when": "view == suffixes.groups",
+          "group": "navigation"
+        },
+        {
+          "command": "suffixes.toggleNameSort",
+          "when": "view == suffixes.groups",
+          "group": "navigation"
+        },
+        {
+          "command": "suffixes.toggleCountSort",
+          "when": "view == suffixes.groups",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
+    "build": "npm run compile",
     "watch": "tsc -watch -p ./",
-    "dev": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint src/**/*.ts",
+    "fix": "eslint src/**/*.ts --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^20.11.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "20.x",
     "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.5.3",
+    "typescript": "5.3.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2"
   }
 }

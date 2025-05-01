@@ -1,0 +1,137 @@
+{
+  "todos": [
+    {
+      "id": "in-file-display",
+      "title": "In-File Display",
+      "description": "Show matching files' code directly within the current file's view",
+      "effort": 6,
+      "value": 10,
+      "architecture": 7,
+      "dependencies": [],
+      "notes": "Consider using VS Code's split view or custom webview. Handle large result sets with pattern configuration. Consider performance with large files and implement virtual scrolling if needed. Current access methods: Activity Bar Icon, Status Bar Button, Commands, CodeLens. Planned: Context Menu, Search & Filter, Keyboard Shortcuts, Drag & Drop.",
+      "priority": 1
+    },
+    {
+      "id": "pattern-configuration",
+      "title": "Pattern Configuration",
+      "description": "Allow users to configure patterns per file type when too many matches are found",
+      "effort": 5,
+      "value": 9,
+      "architecture": 6,
+      "dependencies": ["in-file-display"],
+      "notes": "Use VS Code's quick pick for pattern selection. Store patterns in workspace settings. Consider regex support for advanced filtering. Implement real-time search with fuzzy matching and history support.",
+      "priority": 2
+    },
+    {
+      "id": "core-display",
+      "title": "Core Display",
+      "description": "Show matching files in a dedicated panel/sidebar with full file paths and direct file opening",
+      "effort": 4,
+      "value": 8,
+      "architecture": 8,
+      "dependencies": ["in-file-display"],
+      "notes": "Foundation for other features. Need to decide between panel vs sidebar approach. Consider truncation for long paths. Enable direct file opening from matches list. Current implementation: ✅ Basic file icons and paths, ✅ Error handling, ✅ Auto-refresh. Next: Add file size and last modified date to tooltips.",
+      "priority": 3
+    },
+    {
+      "id": "file-navigation",
+      "title": "File Navigation",
+      "description": "Group files by directory with collapse/expand and sorting options",
+      "effort": 5,
+      "value": 7,
+      "architecture": 6,
+      "dependencies": ["core-display"],
+      "notes": "Consider performance with deep directory structures. Use VS Code's tree view patterns. Implement sorting options (name, path, last modified) with caching. Add collapse/expand functionality. Current status: ✅ Basic sorting by name, ✅ File count badges. Next: Implement parent directory grouping, Add more sorting options with persistence.",
+      "priority": 4
+    },
+    {
+      "id": "real-time-updates",
+      "title": "Real-time Updates",
+      "description": "Implement real-time match updates with performance optimizations",
+      "effort": 7,
+      "value": 8,
+      "architecture": 8,
+      "dependencies": ["in-file-display"],
+      "notes": "Consider debouncing updates and virtual scrolling for large lists. Implement file system watching for updates. Add loading indicators, progress bars, and status messages. Implement lazy loading with background loading and cancel support.",
+      "priority": 5
+    },
+    {
+      "id": "visual-enhancements",
+      "title": "Visual Enhancements",
+      "description": "Add file type icons, hover previews, and current file highlighting",
+      "effort": 4,
+      "value": 6,
+      "architecture": 4,
+      "dependencies": ["in-file-display"],
+      "notes": "Use VS Code's built-in icons and theming system. Show file content preview on hover with content caching. Highlight current file in matches list using active editor tracking. Display match count for each suffix. Current status: ✅ Custom icons for suffix groups, ✅ File type icons. Next: Implement status indicators, Add visual feedback, Improve styling with theme support.",
+      "priority": 6
+    },
+    {
+      "id": "interaction-features",
+      "title": "Interaction Features",
+      "description": "Add search, path copying, and breadcrumb navigation",
+      "effort": 5,
+      "value": 7,
+      "architecture": 5,
+      "dependencies": ["core-display"],
+      "notes": "Consider fuzzy search and different path format options. Enable one-click path copying. Add pinning for frequently used suffix groups with state persistence. Show breadcrumb navigation for suffix context using VS Code's breadcrumb API. Planned: Context menu actions, Drag-and-drop support, Keyboard shortcuts.",
+      "priority": 7
+    },
+    {
+      "id": "configuration",
+      "title": "Configuration",
+      "description": "Add settings for display properties, match limits, and appearance",
+      "effort": 4,
+      "value": 6,
+      "architecture": 5,
+      "dependencies": ["core-display"],
+      "notes": "Use VS Code's settings API. Keep options simple and intuitive. Add configurable file properties display. Add maximum matches display setting with dynamic adjustment. Enable match list appearance customization using VS Code's theming system. Consider caching strategies for file metadata and search results.",
+      "priority": 8
+    },
+    {
+      "id": "workspace-index",
+      "title": "Workspace Index Optimization",
+      "description": "Implement efficient workspace indexing using VSCode's internal APIs and file system watchers",
+      "effort": 6,
+      "value": 9,
+      "architecture": 8,
+      "dependencies": ["real-time-updates"],
+      "notes": "Use VSCode's workspace.findFiles() with optimized patterns. Implement file system watcher-based index updates. Consider caching strategies for large workspaces. Add background indexing with progress indicators. Support incremental updates for better performance. Consider using vscode.workspace.textDocuments for opened files. Add configuration for index update frequency and caching behavior.",
+      "priority": 3
+    }
+  ],
+  "next_steps": ["in-file-display", "pattern-configuration", "workspace-index", "core-display"],
+  "notes": {
+    "general": [
+      "Focus on in-file display as primary user experience",
+      "Use pattern configuration to manage large result sets",
+      "Maintain consistent UI/UX with VS Code",
+      "Consider performance with large codebases",
+      "Prioritize stories based on user feedback",
+      "Focus on high-value, low-effort features first",
+      "Consider architectural impact before implementation",
+      "Test performance with large codebases",
+      "Keep configuration options simple and intuitive",
+      "Prioritize user experience",
+      "Maintain VS Code design patterns",
+      "Consider performance at each step",
+      "Test with large codebases"
+    ],
+    "implementation_status": {
+      "completed": [
+        "Basic file icons and paths",
+        "Error handling",
+        "Auto-refresh",
+        "File type icons",
+        "Custom icons for suffix groups",
+        "Basic sorting by name",
+        "File count badges"
+      ],
+      "in_progress": [
+        "Additional file information tooltips",
+        "Parent directory grouping",
+        "More sorting options with persistence"
+      ]
+    }
+  }
+}

@@ -5,10 +5,14 @@
     "outDir": "out",
     "lib": ["ES2020"],
     "sourceMap": true,
-    "rootDir": "suffixes/src",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "jest"],
+    "typeRoots": ["./node_modules/@types"]
   },
-  "exclude": ["node_modules", ".vscode-test"]
-} 
+  "exclude": ["node_modules", ".vscode-test"],
+  "include": ["src/**/*.ts", "src/_unused/scanner/indexing/indexing.state.ts"]
+}
