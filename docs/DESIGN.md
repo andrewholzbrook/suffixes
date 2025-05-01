@@ -1,5 +1,11 @@
 # Configuration Priorities
 
+# Potential Future Extensions / Major Features
+
+- **Direct Suffix Application:** An extension or feature set dedicated to automatically renaming files or modifying their content based on the configured suffixes. This would involve handling file system operations directly, managing potential conflicts, and providing user controls for application and reversal. (Derived from initial FileSystem Goals)
+
+---
+
 ## Current Focus: Supporting Suffix Logic and Feature Toggles
 
 ### Goals:
@@ -70,7 +76,7 @@
 2.  **Relevant Scope:** Focus watching on file types or directories relevant to suffix configuration, if applicable, or watch broadly within workspace folders.
 3.  **Notification:** Notify relevant components (primarily the UI's TreeDataProvider) when file system changes occur that require a view update.
 4.  **Performance:** Implement efficiently, potentially using debouncing for rapid changes if necessary.
-5.  **File Operations (Future):** Potentially provide helpers for reading/writing files if the extension needs to modify files directly (e.g., apply suffixes - _scope to be confirmed_).
+5.  **File Operations (Future Scope):** Reading file contents might be necessary for future features, but direct modification (like applying suffixes) is considered out of scope for the initial implementation (see Potential Future Extensions).
 
 ### Related VS Code Concepts:
 
