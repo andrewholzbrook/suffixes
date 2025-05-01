@@ -1,4 +1,12 @@
-# Configuration Priorities
+# Design
+
+This is the main design document for the Suffixes extension.
+
+## Design Goals
+
+The goals of this application are thus:
+
+- Enable architectural efficiency by applying suffix naming strategies when following [DDD](https://en.wikipedia.org/wiki/Domain-driven_design).
 
 # Potential Future Extensions / Major Features
 
