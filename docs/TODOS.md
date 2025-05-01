@@ -1,12 +1,18 @@
 # Suffixes Extension TODOs
 
-- [ ] - Reaquaint myself with this project.
-
 ---
 
 # High Priority (Core MVP)
 
 - [ ] (M) **Activity Bar & View:** Define Activity Bar icon and Tree View container in `package.json`.
+  - [ ] (S) Understand `contributes.viewsContainers` and `contributes.views` in `package.json`.
+  - [ ] (S) Define the `viewsContainers` entry for the Activity Bar (ID, title, icon).
+  - [ ] (S) Choose/prepare an icon file (e.g., SVG) or select a VS Code Product Icon (`$(icon-name)`).
+  - [ ] (S) Define the `views` entry for the Tree View (ID, name, type) linked to the container.
+  - [ ] (S) Ensure the chosen Tree View `id` is noted for use in `extension.ts` later.
+  - [ ] (S) Document the new UI elements in `README.md`.
+  - [ ] (S) Add entry to `CHANGELOG.md`.
+  - [ ] (S) Manually test: check icon, title, view panel appearance after loading the extension.
 - [ ] (L) **TreeDataProvider Basics:** Implement `TreeDataProvider` to show workspace folder structure (`getChildren`).
 - [ ] (M) **Configuration Integration:** Read basic `suffixes.mappings` and `suffixes.ignoredPatterns` from VS Code settings.
 - [ ] (M) **Suffix Logic Integration:** Create mechanism for `TreeDataProvider` to query the `Suffix` module/logic to determine if a file has a suffix.
