@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { SuffixTreeDataProvider } from './SuffixTreeDataProvider';
+import { SuffixTreeDataProvider } from './tree/SuffixTreeDataProvider';
 
 export async function activate(context: vscode.ExtensionContext) {
   console.log('[Suffixes] Activating extension...');
