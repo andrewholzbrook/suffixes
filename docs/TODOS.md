@@ -1,20 +1,23 @@
 # Suffixes Extension TODOs
 
+# Task List Instruction Templates
+
+- **Rotate Step 1: Process Completed:** Identify tasks marked `[x]` in `# Next 3`. Log any necessary info (e.g., to `#CHANGELOG`). Remove completed tasks from `# Next 3`.
+- **Rotate Step 2: Identify Next:** Select the top 3 actionable tasks from `# Ready` based on priority/effort and logical sequence.
+- **Rotate Step 3: Pull Tasks:** Move the selected 3 tasks from `# Ready` to `# Next 3`.
+
 ---
 
 # Next 3
 
-- [x] **Empty Project: Define Trigger:** Check for `TODOS.md` within the `activate` function on extension startup. [P:1, E:1]
-- [x] **Empty Project: Determine TODO Location:** Decide the default path: USE `.vscode/TODO.md`. [P:1, E:1]
-- [x] **Empty Project: Check Dismissal State:** Read `context.workspaceState` (key: `'suffixes.prompt.createTodoDismissed'`) to check dismissal status. [P:1, E:1]
+- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `.vscode/TODO.md` (using `showInformationMessage`). [P:1, E:1]
+- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to `context.workspaceState` using key `'suffixes.prompt.createTodoDismissed'`. [P:1, E:1]
+- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
 
 ---
 
 # Ready
 
-- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `.vscode/TODO.md` (using `showInformationMessage`). [P:1, E:1]
-- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to `context.workspaceState` using key `'suffixes.prompt.createTodoDismissed'`. [P:1, E:1]
-- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
 - [ ] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
 - [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
 - [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
