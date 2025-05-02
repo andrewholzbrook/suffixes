@@ -2,6 +2,25 @@
 
 A VS Code extension that helps you manage and navigate files with similar suffixes.
 
+## Features
+
+- **Activity Bar Icon**: Provides quick access to the Suffixes Explorer view.
+- **Suffixes Explorer View**: A dedicated tree view showing files grouped by suffixes (placeholder implementation currently).
+  - Displays files and folders (currently hardcoded placeholders like README.md and src/extension.ts).
+  - Shows file/folder paths as descriptions.
+  - Includes a Refresh button in the view title bar.
+- **Suffix Grouping**: (Future) Automatically groups files with similar suffixes.
+- **Multiple Views**: (Future) Access files through TreeView, split view, or CodeLens.
+- **Real-time Updates**: (Future) File list updates automatically as you add/remove files.
+- **Customizable**: Configure which suffixes to track and which directories to ignore (via Settings).
+
+## Getting Started (Current State)
+
+1.  **Find the Icon**: Look for the Suffixes icon (using the custom `resources/suffixes.svg` icon) in the VS Code Activity Bar (usually on the left-hand side).
+2.  **Open the View**: Click the icon to open the "Suffixes Explorer" tree view.
+3.  **Explore (Placeholders)**: You'll see a basic tree structure with placeholder items.
+4.  **Refresh**: Use the refresh icon in the view's title bar to manually trigger a refresh (reloads the placeholder data).
+
 ## Ways to Use the Extension
 
 ### 1. Activity Bar
@@ -28,13 +47,6 @@ Open the command palette (Cmd/Ctrl+Shift+P) and type:
 - Look for the clickable text above files with matching suffixes
 - Shows the number of related files
 - Click to view all matches
-
-## Features
-
-- **Suffix Grouping**: Automatically groups files with similar suffixes
-- **Multiple Views**: Access files through TreeView, split view, or CodeLens
-- **Real-time Updates**: File list updates automatically as you add/remove files
-- **Customizable**: Configure which suffixes to track and which directories to ignore
 
 ## Configuration
 

@@ -249,7 +249,7 @@
         {
           "id": "suffixesActivityBar",
           "title": "Suffixes",
-          "icon": "$(files)"
+          "icon": "resources/suffixes.svg"
         }
       ]
     },

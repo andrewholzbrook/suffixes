@@ -20,9 +20,9 @@
 - [x] **Activity Bar & View Container:** Basic UI setup. [P:1, E:1]
   - [x] package.json: contributes.viewsContainers.activitybar (Define container)
   - [x] package.json: contributes.icons (Using default `$(list-tree)` icon for now)
-  - [ ] Choose/prepare a custom icon (e.g., SVG). (Optional)
-  - [ ] Document new UI in README.md. [P:1, E:1]
-  - [ ] Add entry to CHANGELOG.md. [P:1, E:1]
+  - [x] Choose/prepare a custom icon (e.g., SVG). (Optional)
+  - [x] Document new UI in README.md. [P:1, E:1]
+  - [x] Add entry to CHANGELOG.md. [P:1, E:1]
   - [x] Manually tested basic appearance.
 
 ---
