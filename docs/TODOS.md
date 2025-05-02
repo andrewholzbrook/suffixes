@@ -1,15 +1,60 @@
 # Suffixes Extension TODOs
 
+## VS Code UI Elements & APIs
+
+Here's a quick reference for common VS Code UI elements and how extensions typically interact with them, sorted by typical implementation order for a UI-focused extension:
+
+- [x] **Activity Bar Icon & View Container:** (S, High Priority) Add icon to sidebar, define custom view area.
+  - [x] `package.json`: `contributes.viewsContainers.activitybar` (Defines the container)
+  - [x] `package.json`: `contributes.icons` (Optional: Defines custom icon path - using `$(list-tree)` for now)
+- [x] **Tree View:** (L, High Priority) Display hierarchical data in a custom view.
+  - [x] `package.json`: `contributes.views` (Links view ID to container)
+  - [ ] `vscode.window.createTreeView` (Creates the view instance)
+  - [ ] `vscode.TreeDataProvider` (Interface to implement for data)
+  - [ ] `vscode.TreeItem` (Represents an item in the tree)
+- [ ] **Commands:** (M, High Priority) Define actions users can trigger (palette, menus, keybinds).
+  - [ ] `package.json`: `contributes.commands` (Defines command ID, title, category)
+  - [ ] `vscode.commands.registerCommand` (Registers the command handler)
+- [ ] **Menus (Context Menus, View Actions, Command Palette):** (M, Medium Priority) Add commands to specific UI locations.
+  - [ ] `package.json`: `contributes.menus` (Defines where commands appear)
+    - [ ] `commandPalette`: Show in Command Palette (Ctrl+Shift+P)
+    - [ ] `view/title`: Buttons on the view's title bar
+    - [ ] `view/item/context`: Context menu for items _within_ a specific view
+    - [ ] `editor/context`: Context menu in the text editor
+    - [ ] `explorer/context`: Context menu in the File Explorer
+  - [ ] `when` clauses are used within `menus` to control visibility based on context.
+- [ ] **Configuration Settings:** (M, Medium Priority) Allow users to customize extension behavior via Settings UI.
+  - [ ] `package.json`: `contributes.configuration` (Defines settings structure and defaults)
+  - [ ] `vscode.workspace.getConfiguration` (Reads settings values)
+  - [ ] `vscode.workspace.onDidChangeConfiguration` (Listens for changes)
+- [ ] **File System Watcher:** (M, Medium Priority) React to file creation, deletion, or changes on disk.
+  - [ ] `vscode.workspace.createFileSystemWatcher` (Monitors file changes)
+- [ ] **Notifications:** (S, Low Priority) Display messages (info, warning, error) to the user.
+  - [ ] `vscode.window.showInformationMessage`
+  - [ ] `vscode.window.showWarningMessage`
+  - [ ] `vscode.window.showErrorMessage`
+- [ ] **Input & Selection:** (S, Medium Priority) Prompt users for text input or choices from a list.
+  - [ ] `vscode.window.showInputBox` (Prompt for text input)
+  - [ ] `vscode.window.showQuickPick` (Show a dropdown list for selection)
+- [ ] **Status Bar Item:** (S, Low Priority) Show brief info or actions in the bottom status bar.
+  - [ ] `vscode.window.createStatusBarItem` (Creates the item)
+  - [ ] `StatusBarItem` properties (e.g., `.text`, `.tooltip`, `.command`)
+- [ ] **Decorations (Editor):** (M, Low Priority) Apply visual styles (color, borders) to text in the editor.
+  - [ ] `vscode.window.createTextEditorDecorationType` (Defines styling for text ranges)
+  - [ ] `TextEditor.setDecorations` (Applies decorations)
+- [ ] **Webviews:** (L, Low Priority) Create custom UI panels using HTML/CSS/JS.
+  - [ ] `vscode.window.createWebviewPanel` (Creates a custom HTML/JS/CSS view)
+
 ---
 
 # High Priority (Core MVP)
 
-- [ ] (M) **Activity Bar & View:** Define Activity Bar icon and Tree View container in `package.json`.
-  - [ ] (S) Understand `contributes.viewsContainers` and `contributes.views` in `package.json`.
-  - [ ] (S) Define the `viewsContainers` entry for the Activity Bar (ID, title, icon).
-  - [ ] (S) Choose/prepare an icon file (e.g., SVG) or select a VS Code Product Icon (`$(icon-name)`).
-  - [ ] (S) Define the `views` entry for the Tree View (ID, name, type) linked to the container.
-  - [ ] (S) Ensure the chosen Tree View `id` is noted for use in `extension.ts` later.
+- [x] (M) **Activity Bar & View:** Define Activity Bar icon and Tree View container in `package.json`.
+  - [x] (S) Understand `contributes.viewsContainers` and `contributes.views` in `package.json`.
+  - [x] (S) Define the `viewsContainers` entry for the Activity Bar (ID, title, icon).
+  - [ ] (S) Choose/prepare an icon file (e.g., SVG) or select a VS Code Product Icon (`$(icon-name)`). (Using `$(list-tree)` for now)
+  - [x] (S) Define the `views` entry for the Tree View (ID, name, type) linked to the container.
+  - [ ] (S) Ensure the chosen Tree View `id` is noted for use in `extension.ts` later. (`suffixesTreeView`)
   - [ ] (S) Document the new UI elements in `README.md`.
   - [ ] (S) Add entry to `CHANGELOG.md`.
   - [ ] (S) Manually test: check icon, title, view panel appearance after loading the extension.

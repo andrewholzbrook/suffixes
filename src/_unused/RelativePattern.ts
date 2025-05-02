@@ -1,1 +1,0 @@
-export { RelativePattern } from 'vscode';

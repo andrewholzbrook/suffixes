@@ -1,1 +1,0 @@
-export { MarkdownString } from 'vscode';

@@ -1,18 +1,17 @@
-import { createExtension } from './createExtension';
-import { ExtensionContext } from './vscode/extension/ExtensionContext';
-import { onDidChangeConfiguration } from './vscode/workspace/config/onDidChangeConfiguration';
+import * as vscode from 'vscode';
 
-let extension: ReturnType<typeof createExtension>;
+export async function activate(context: vscode.ExtensionContext) {
+  console.log('[Suffixes] Activating extension...');
 
-export async function activate(context: ExtensionContext) {
-  extension = createExtension(context);
-  const configWatcher = onDidChangeConfiguration(context, extension.initialize);
-  context.subscriptions.push(configWatcher);
-  await extension.initialize();
+  try {
+    // TODO: Add back initialization logic, including Tree View setup
+    console.log('[Suffixes] Basic activation complete. No UI initialized yet.');
+  } catch (error) {
+    console.error('[Suffixes] Error during activation:', error);
+    vscode.window.showErrorMessage(`Suffixes activation failed: ${error}`);
+  }
 }
 
 export function deactivate() {
-  if (extension) {
-    extension.dispose();
-  }
+  console.log('[Suffixes] Deactivating extension...');
 }

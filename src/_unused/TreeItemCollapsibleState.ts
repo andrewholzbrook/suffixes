@@ -1,1 +1,0 @@
-export { TreeItemCollapsibleState } from 'vscode';

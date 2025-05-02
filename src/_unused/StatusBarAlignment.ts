@@ -1,1 +1,0 @@
-export { StatusBarAlignment } from 'vscode';

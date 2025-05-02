@@ -1,1 +1,0 @@
-export { ViewColumn } from 'vscode';

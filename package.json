@@ -41,7 +41,13 @@
         "suffixes.enabledPatterns": {
           "type": "array",
           "default": [
-            ".dart"
+            ".dart",
+            ".ts",
+            ".js",
+            ".jsx",
+            ".tsx",
+            ".json",
+            ".md"
           ],
           "description": "File patterns to enable suffix-based navigation for"
         },
@@ -251,18 +257,18 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "suffixes",
+          "id": "suffixesActivityBar",
           "title": "Suffixes",
-          "icon": "resources/suffixes.svg"
+          "icon": "$(files)"
         }
       ]
     },
     "views": {
-      "suffixes": [
+      "suffixesActivityBar": [
         {
-          "id": "suffixes.groups",
-          "name": "Suffix Groups",
-          "icon": "resources/suffixes.svg"
+          "id": "suffixesTreeView",
+          "name": "Suffixes Explorer",
+          "type": "tree"
         }
       ]
     },
