@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { showDebugMessage } from './commands/showDebugMessage';
 import { SuffixTreeDataProvider } from './tree/SuffixTreeDataProvider';
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -21,10 +22,10 @@ export async function activate(context: vscode.ExtensionContext) {
     console.log('[Suffixes] Tree view registered.');
 
     // --- Register Commands ---
-    const showDebugCommand = vscode.commands.registerCommand('suffixes.showDebugMessage', () => {
-      vscode.window.showInformationMessage('Suffixes Debug Message! [P:?, E:?]'); // Placeholder
-      console.log('[Suffixes] showDebugMessage command executed.');
-    });
+    const showDebugCommand = vscode.commands.registerCommand(
+      'suffixes.showDebugMessage',
+      showDebugMessage
+    );
     context.subscriptions.push(showDebugCommand);
 
     console.log('[Suffixes] Commands registered.');
