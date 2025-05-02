@@ -1,7 +1,5 @@
 # Suffixes Extension TODOs
 
-- [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:?, E:?]
-
 ---
 
 # Top 3 Priorities (Next Steps)
@@ -23,6 +21,12 @@
   - [ ] Document new UI in README.md. [P:1, E:1]
   - [ ] Add entry to CHANGELOG.md. [P:1, E:1]
   - [x] Manually tested basic appearance.
+
+---
+
+# Refine
+
+- [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:?, E:?]
 
 ---
 
