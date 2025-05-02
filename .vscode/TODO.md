@@ -11,12 +11,9 @@
 # Next 3
 
 > **MODE: Execute.** Work the top `[ ]` task. Focus on code implementation. **Trigger:** When coding is done, move to `Clean & Stage`.
-
 > **MODE: Clean & Stage.** Review changes, run linters/formatters, remove temporary code/comments. Stage relevant files (`git add`). **Trigger:** When ready to commit, move to `Mark Complete & Commit`.
-
 > **MODE: Mark Complete & Commit.** Mark task `[x]`. Construct commit message. Commit (`git commit`). Remove completed task line from this section. **Trigger:** After commit, check if `# Next 3` needs replenishment or if ready for next task/push.
 
-- [x] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
 - [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
 - [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 
