@@ -27,6 +27,9 @@
 # Refine
 
 - [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:?, E:?]
+- [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
+- [ ] **CodeLens Integration:** Implement `vscode.CodeLensProvider` to add interactive elements (e.g., "Open File", "Get LLM Prompt") within `TODOS.md`. [P:1, E:3]
+- [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
 
 ---
 
