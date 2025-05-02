@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
-import { SuffixTreeDataProvider } from '../tree/SuffixTreeDataProvider';
+import { TreeProvider } from '../tree/TreeProvider';
 import { showDebugMessage } from './showDebugMessage';
 
 export function registerCommands(
   context: vscode.ExtensionContext,
-  suffixTreeDataProvider: SuffixTreeDataProvider
+  suffixTreeDataProvider: TreeProvider
 ): void {
   console.log('[Suffixes] Registering commands...');
 

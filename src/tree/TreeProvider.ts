@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as vscode from 'vscode';
 import { ContextValues } from '../context/values.const';
 
-export class SuffixTreeDataProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
+export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
   // Event emitter for when tree data changes
   private _onDidChangeTreeData: vscode.EventEmitter<vscode.TreeItem | undefined | null | void> =
     new vscode.EventEmitter<vscode.TreeItem | undefined | null | void>();
