@@ -4,15 +4,29 @@
 
 # Next 3
 
+- [ ] **Empty Project: Define Trigger:** Check for `TODOS.md` on initial workspace load/extension activation. [P:1, E:1]
+- [ ] **Empty Project: Determine TODO Location:** Decide the default path (e.g., `.vscode/TODOS.md`). [P:1, E:1]
+- [ ] **Empty Project: Check Dismissal State:** Read workspace state to see if the user previously dismissed the prompt. [P:1, E:1]
+
 ---
 
 # Ready
+
+- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `TODOS.md` (using `showInformationMessage`). [P:1, E:1]
+- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to workspace state. [P:1, E:1]
+- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `TODOS.md` file at the chosen location (`workspace.fs.writeFile`). [P:1, E:1]
+- [ ] **Empty Project: Open Created File:** Open the newly created file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
+- [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
+- [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 
 ---
 
 # Refine
 
 - [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
+  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty file is created.
+  - [ ] **Configuration:** Add settings to disable scaffolding, customize location.
+  - [ ] **Documentation:** Document the scaffolding feature.
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
@@ -63,34 +77,4 @@
 # Configuration & Workspace
 
 - [ ] **Configuration Settings:** Allow user customization via Settings UI. [P:2, E:2]
-  - [ ] `package.json`: `contributes.configuration` (Define settings structure/defaults)
-  - [ ] `vscode.workspace.getConfiguration` (Read settings)
-  - [ ] `vscode.workspace.onDidChangeConfiguration` (React to changes). [P:1, E:2]
-
----
-
-# Enhancements (Future Ideas)
-
-- [ ] **Tree View Appearance & Interaction:** [P:3]
-  - [ ] Basic Icons (ThemeIcon). [P:3, E:1]
-  - [ ] Collapse/Expand (Inherent). [P:3, E:1]
-  - [ ] Highlight Active File. [P:3, E:2]
-  - [ ] Copy Path commands. [P:3, E:2]
-  - [ ] Sorting options. [P:3, E:2]
-  - [ ] Custom Appearance settings. [P:3, E:2]
-  - [ ] Display Suffix in label/description. [P:3, E:2]
-  - [ ] Search/Filter in Tree View. [P:3, E:3]
-  - [ ] Hover Preview. [P:3, E:3]
-  - [ ] Tooltips (size, date). [P:3, E:1]
-  - [ ] Breadcrumbs integration. [P:3, E:3]
-  - [ ] Pinning items. [P:3, E:2]
-  - [ ] Display Settings (max items, etc.). [P:3, E:2]
-- [ ] **Performance Enhancements:** [P:3]
-  - [ ] Update Optimizations (virtual scrolling, granular updates). [P:3, E:3]
-  - [ ] Indexing/Caching for large workspaces. [P:3, E:3]
-
----
-
-# Out of Scope / Different Features
-
-(These items represent significantly different features or separate extension ideas not covered by the current DESIGN.md.)
+  - [ ] `
