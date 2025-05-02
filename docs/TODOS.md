@@ -5,6 +5,8 @@
 # Next Steps
 
 - [ ] **CodeLens Integration:** Implement `vscode.CodeLensProvider` to add interactive elements (e.g., "Open File", "Get LLM Prompt") within `TODOS.md`. [P:1, E:3]
+  - [ ] Define `TodoCodeLensProvider` class (implement `provideCodeLenses` with basic console logging).
+  - [ ] Register the provider in `extension.ts` (add console log on registration).
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
 - [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:1, E:2]
 
