@@ -63,7 +63,6 @@
 
 > **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log (optional), Remove, Commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
 
-- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `.vscode/TODO.md` (using `showInformationMessage`). [P:1, E:1]
 - [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to `context.workspaceState` using key `'suffixes.prompt.createTodoDismissed'`. [P:1, E:1]
 - [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
 
