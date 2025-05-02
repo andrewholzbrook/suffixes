@@ -2,8 +2,17 @@
 
 ---
 
+# Next 3
+
+---
+
+# Ready
+
+---
+
 # Refine
 
+- [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
