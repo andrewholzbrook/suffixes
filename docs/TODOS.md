@@ -4,19 +4,20 @@
 
 # Next 3
 
-- [ ] **Empty Project: Define Trigger:** Check for `TODOS.md` on initial workspace load/extension activation. [P:1, E:1]
-- [ ] **Empty Project: Determine TODO Location:** Decide the default path (e.g., `.vscode/TODOS.md`). [P:1, E:1]
-- [ ] **Empty Project: Check Dismissal State:** Read workspace state to see if the user previously dismissed the prompt. [P:1, E:1]
+- [x] **Empty Project: Define Trigger:** Check for `TODOS.md` within the `activate` function on extension startup. [P:1, E:1]
+- [x] **Empty Project: Determine TODO Location:** Decide the default path: USE `.vscode/TODO.md`. [P:1, E:1]
+- [x] **Empty Project: Check Dismissal State:** Read `context.workspaceState` (key: `'suffixes.prompt.createTodoDismissed'`) to check dismissal status. [P:1, E:1]
 
 ---
 
 # Ready
 
-- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `TODOS.md` (using `showInformationMessage`). [P:1, E:1]
-- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to workspace state. [P:1, E:1]
-- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `TODOS.md` file at the chosen location (`workspace.fs.writeFile`). [P:1, E:1]
-- [ ] **Empty Project: Open Created File:** Open the newly created file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
+- [ ] **Empty Project: Implement User Prompt:** Implement notification asking user to create `.vscode/TODO.md` (using `showInformationMessage`). [P:1, E:1]
+- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to `context.workspaceState` using key `'suffixes.prompt.createTodoDismissed'`. [P:1, E:1]
+- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
+- [ ] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
 - [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
+- [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 
 ---
@@ -24,9 +25,9 @@
 # Refine
 
 - [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
-  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty file is created.
-  - [ ] **Configuration:** Add settings to disable scaffolding, customize location.
-  - [ ] **Documentation:** Document the scaffolding feature.
+  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created.
+  - [ ] **Configuration:** Add settings to disable scaffolding, customize location (defaulting to `.vscode/TODO.md`).
+  - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location.
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
