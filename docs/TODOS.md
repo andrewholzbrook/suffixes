@@ -14,7 +14,7 @@
     - [x] Set a placeholder `description` (e.g., file path). [P:1, E:1]
     - [x] Set `contextValue` (e.g., `file`, `folder`) to enable context-specific commands later. [P:1, E:1]
 - [ ] **Commands:** Implement core commands. [P:1, E:2]
-  - [ ] package.json: contributes.commands (Define `suffixes.refreshTree` - _Partially done_, Add/Remove later). [P:1, E:3]
+  - [x] package.json: contributes.commands (Define `suffixes.refreshTree` - _Partially done_, Add/Remove later). [P:1, E:3]
   - [x] vscode.commands.registerCommand (Register handlers - _Done in `registerCommands`_)
     - [x] Implement handler for Refresh (`suffixes.refreshTree`) to trigger TreeDataProvider.refresh(). [P:1, E:2]
 - [x] **Activity Bar & View Container:** Basic UI setup. [P:1, E:1]

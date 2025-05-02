@@ -265,19 +265,10 @@
     "menus": {
       "view/title": [
         {
-          "command": "suffixes.refresh",
-          "when": "view == suffixes.groups",
-          "group": "navigation"
-        },
-        {
-          "command": "suffixes.toggleNameSort",
-          "when": "view == suffixes.groups",
-          "group": "navigation"
-        },
-        {
-          "command": "suffixes.toggleCountSort",
-          "when": "view == suffixes.groups",
-          "group": "navigation"
+          "command": "suffixes.refreshTree",
+          "when": "view == suffixesTreeView",
+          "group": "navigation",
+          "icon": "$(refresh)"
         }
       ]
     }

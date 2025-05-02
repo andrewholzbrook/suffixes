@@ -15,6 +15,7 @@ export class SuffixTreeDataProvider implements vscode.TreeDataProvider<vscode.Tr
   }
 
   refresh(): void {
+    console.log('[Suffixes] Refresh command triggered. Firing onDidChangeTreeData...');
     this._onDidChangeTreeData.fire();
   }
 
