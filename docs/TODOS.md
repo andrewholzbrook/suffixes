@@ -5,6 +5,8 @@
 - **Rotate Step 1: Process Completed:** Identify tasks marked `[x]` in `# Next 3`. Log any necessary info (e.g., to `#CHANGELOG`). Remove completed tasks from `# Next 3`.
 - **Rotate Step 2: Identify Next:** Select the top 3 actionable tasks from `# Ready` based on priority/effort and logical sequence.
 - **Rotate Step 3: Pull Tasks:** Move the selected 3 tasks from `# Ready` to `# Next 3`.
+- **Begin Work:** Identify the topmost incomplete (`[ ]`) task in `# Next 3`. This is the current task to focus on and implement. Get Started.
+- **Ready for Commit:** Look at in-progress git diffs and remove any comments that are not necessary. Comments should explain the "Why" and not be an obvious LLM artifact.
 
 ---
 
@@ -27,9 +29,9 @@
 
 # Refine
 
+- [ ] **Configuration:** Add setting to customize the tone/wording of user prompts (e.g., the create TODO.md prompt). [P:3, E:1]
 - [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
   - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created.
-  - [ ] **Configuration:** Add settings to disable scaffolding, customize location (defaulting to `.vscode/TODO.md`).
   - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location.
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
@@ -47,6 +49,7 @@
 - [ ] **CodeLens Integration - 2:** Logging when `/docs/TODOS.md# Next Steps` clicked added, explore next steps
 - [ ] **VIEW_IDS** Find a place for this.
 - [ ] **Clean up registerCommands** Some things in here can be extracted out.
+- [ ] **Rename extension** to something a little less specific to the "suffixes" concept.
 
 ---
 
