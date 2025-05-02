@@ -1,11 +1,25 @@
 import * as vscode from 'vscode';
+import { SuffixTreeDataProvider } from './SuffixTreeDataProvider';
 
 export async function activate(context: vscode.ExtensionContext) {
   console.log('[Suffixes] Activating extension...');
 
   try {
-    // TODO: Add back initialization logic, including Tree View setup
-    console.log('[Suffixes] Basic activation complete. No UI initialized yet.');
+    // Get workspace folder
+    const workspaceRoot =
+      vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0
+        ? vscode.workspace.workspaceFolders[0].uri.fsPath
+        : undefined;
+
+    // Create and register the TreeDataProvider
+    const suffixTreeDataProvider = new SuffixTreeDataProvider(workspaceRoot);
+    vscode.window.registerTreeDataProvider('suffixesTreeView', suffixTreeDataProvider);
+    vscode.window.createTreeView('suffixesTreeView', {
+      treeDataProvider: suffixTreeDataProvider,
+    });
+
+    console.log('[Suffixes] Tree view registered.');
+    // TODO: Add back other initialization logic if any
   } catch (error) {
     console.error('[Suffixes] Error during activation:', error);
     vscode.window.showErrorMessage(`Suffixes activation failed: ${error}`);

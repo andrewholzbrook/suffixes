@@ -9,8 +9,8 @@ Here's a quick reference for common VS Code UI elements and how extensions typic
   - [x] `package.json`: `contributes.icons` (Optional: Defines custom icon path - using `$(list-tree)` for now)
 - [x] **Tree View:** (L, High Priority) Display hierarchical data in a custom view.
   - [x] `package.json`: `contributes.views` (Links view ID to container)
-  - [ ] `vscode.window.createTreeView` (Creates the view instance)
-  - [ ] `vscode.TreeDataProvider` (Interface to implement for data)
+  - [x] `vscode.window.createTreeView` (Creates the view instance)
+  - [x] `vscode.TreeDataProvider` (Interface to implement for data)
   - [ ] `vscode.TreeItem` (Represents an item in the tree)
 - [ ] **Commands:** (M, High Priority) Define actions users can trigger (palette, menus, keybinds).
   - [ ] `package.json`: `contributes.commands` (Defines command ID, title, category)
@@ -57,8 +57,9 @@ Here's a quick reference for common VS Code UI elements and how extensions typic
   - [ ] (S) Ensure the chosen Tree View `id` is noted for use in `extension.ts` later. (`suffixesTreeView`)
   - [ ] (S) Document the new UI elements in `README.md`.
   - [ ] (S) Add entry to `CHANGELOG.md`.
-  - [ ] (S) Manually test: check icon, title, view panel appearance after loading the extension.
+  - [x] (S) Manually test: check icon, title, view panel appearance after loading the extension.
 - [ ] (L) **TreeDataProvider Basics:** Implement `TreeDataProvider` to show workspace folder structure (`getChildren`).
+  - [ ] (S) Implement `getChildren` to return a few hardcoded placeholder `TreeItem`s (e.g., `file1.txt`, `folderA/`).
 - [ ] (M) **Configuration Integration:** Read basic `suffixes.mappings` and `suffixes.ignoredPatterns` from VS Code settings.
 - [ ] (M) **Suffix Logic Integration:** Create mechanism for `TreeDataProvider` to query the `Suffix` module/logic to determine if a file has a suffix.
 - [ ] (M) **Visual Distinction:** Set `TreeItem` properties (`iconPath`, `description`, `tooltip`, or `contextValue`) to visually distinguish files/folders with configured suffixes.
