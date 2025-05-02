@@ -12,15 +12,16 @@
 
 > **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log to change log (if necessary, and translate verbiage if necessary), Remove, Ask user if ready to commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
 
+- [ ] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
+- [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
+- [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
+
 ---
 
 # Ready
 
 > **MODE: Replenish `# Next 3`.** **Trigger:** When `# Next 3` has space. Select top 1-3 (P/E, sequence). Move them to `# Next 3`. **Trigger:** If this list is empty/low, go to `# Refine`. (Ref: Full Instructions)
 
-- [ ] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
-- [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
-- [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 
 ---
