@@ -18,3 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Sets `contextValue` ('file'/'folder') for items.
 - Refresh command (`suffixes.refreshTree`) available in Command Palette.
 - Refresh button added to the Suffixes Explorer view title bar.
+- **CodeLens Integration:** Basic implementation of `vscode.CodeLensProvider` for `TODOS.md`.
+- **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`.
+  - Basic implementation showing static text.
+  - Show hovered line content.
+  - **Command Links:** Add simple actions (Open tree view, refresh) to hover.

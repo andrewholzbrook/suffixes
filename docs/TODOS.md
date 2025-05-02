@@ -2,23 +2,8 @@
 
 ---
 
-# Next Steps
-
-- [x] **CodeLens Integration:** Implement `vscode.CodeLensProvider` to add interactive elements (e.g., "Open File", "Get LLM Prompt") within `TODOS.md`. [P:1, E:3]
-  - [x] Define `TodoCodeLensProvider` class (implement `provideCodeLenses` with basic console logging).
-  - [x] Register the provider in `extension.ts` (add console log on registration).
-- [x] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
-  - [x] Basic implementation showing static text.
-  - [x] Show hovered line content.
-  - [x] **Command Links:** Add simple actions (Open tree view, refresh) to hover. I want to see these wired up
-
----
-
 # Refine
 
-- [ ] **CodeLens Integration - 2:** Logging when `/docs/TODOS.md# Next Steps` clicked added, explore next steps
-- [ ] **VIEW_IDS** Find a place for this.
-- [ ] **Clean up registerCommands** Some things in here can be extracted out.
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
@@ -28,10 +13,13 @@
   - [ ] **Parse Task Metadata:** Extract checkbox status, P/E tags, description. [P:1, E:1]
   - [ ] **Configuration:** Allow user to customize hover content. [P:2, E:1]
   - [ ] **Context from Related Files:** Show snippets/details of linked files. [P:3, E:3]
-  - [ ] **(don\'t understand purpose yet) File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
+  - [ ] **(don't understand purpose yet) File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
 - [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
 - [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
 - [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:3, E:2]
+- [ ] **CodeLens Integration - 2:** Logging when `/docs/TODOS.md# Next Steps` clicked added, explore next steps
+- [ ] **VIEW_IDS** Find a place for this.
+- [ ] **Clean up registerCommands** Some things in here can be extracted out.
 
 ---
 
