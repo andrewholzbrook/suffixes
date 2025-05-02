@@ -10,9 +10,7 @@
 
 # Next 3
 
-> **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log (optional), Remove, Ask user if ready to commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
-
-- [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
+> **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log to change log (if necessary, and translate verbiage if necessary), Remove, Ask user if ready to commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
 
 ---
 
