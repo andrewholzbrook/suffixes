@@ -18,6 +18,11 @@
       {
         "command": "suffixes.showDebugMessage",
         "title": "Suffixes: Show Debug Message"
+      },
+      {
+        "command": "suffixes.refreshTree",
+        "title": "Suffixes: Refresh Tree",
+        "category": "Suffixes"
       }
     ],
     "configuration": {
