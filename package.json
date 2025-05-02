@@ -23,6 +23,16 @@
         "command": "suffixes.refreshTree",
         "title": "Suffixes: Refresh Tree",
         "category": "Suffixes"
+      },
+      {
+        "command": "suffixes.createTodoFile",
+        "title": "Suffixes: Create .vscode/TODO.md File",
+        "category": "Suffixes"
+      },
+      {
+        "command": "suffixes.resetTodoPromptDismissal",
+        "title": "Suffixes: Re-enable Prompt for Creating TODO.md",
+        "category": "Suffixes"
       }
     ],
     "configuration": {
@@ -239,8 +249,20 @@
         },
         "suffixes.showCodeLens": {
           "type": "boolean",
-          "default": true,
-          "description": "Show CodeLens annotations for suffix matches"
+          "default": false,
+          "description": "Enable CodeLens hints for suffix files"
+        },
+        "suffixes.prompt.disableCreateTodo": {
+          "type": "boolean",
+          "default": false,
+          "description": "Set to true to disable the prompt asking to create the TODO file.",
+          "scope": "machine-overridable"
+        },
+        "suffixes.todo.filePath": {
+          "type": "string",
+          "default": ".vscode/TODO.md",
+          "description": "The path (relative to the workspace root) where the TODO file should be located.",
+          "scope": "resource"
         }
       }
     },

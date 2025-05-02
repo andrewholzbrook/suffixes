@@ -40,9 +40,4 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
   }
 
   // Optional: Implement resolveCodeLens later for performance if needed
-  // resolveCodeLens?(codeLens: vscode.CodeLens, token: vscode.CancellationToken): vscode.ProviderResult<vscode.CodeLens> {
-  //     console.log("[TodoCodeLensProvider] resolveCodeLens triggered");
-  //     // Potentially enrich the codeLens here, e.g., setting the command
-  //     return codeLens;
-  // }
 }

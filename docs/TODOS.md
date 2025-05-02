@@ -63,7 +63,6 @@
 
 > **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log (optional), Remove, Commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
 
-- [ ] **Empty Project: Handle Dismissal:** Save dismissal choice to `context.workspaceState` using key `'suffixes.prompt.createTodoDismissed'`. [P:1, E:1]
 - [ ] **Empty Project: Create Empty File:** Implement logic to create an _empty_ `.vscode/TODO.md` file (`workspace.fs.writeFile`). [P:1, E:1]
 
 ---
@@ -104,6 +103,7 @@
 - [ ] **VIEW_IDS** Find a place for this.
 - [ ] **Clean up registerCommands** Some things in here can be extracted out.
 - [ ] **Rename extension** to something a little less specific to the "suffixes" concept.
+- [ ] **AppName Wrangling** Find all instances of current app name "suffixes", veryify it's being used as the app name, make it a const
 
 ---
 

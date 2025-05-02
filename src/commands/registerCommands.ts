@@ -1,3 +1,4 @@
+import path from 'path';
 import * as vscode from 'vscode';
 import { TreeProvider } from '../tree/TreeProvider';
 import { showDebugMessage } from './showDebugMessage';
@@ -69,6 +70,62 @@ export function registerCommands(
     }
   );
   context.subscriptions.push(logHeadingClickCommand);
+
+  // Command to manually create the TODO.md file
+  const createTodoFileCommand = vscode.commands.registerCommand(
+    'suffixes.createTodoFile',
+    async () => {
+      console.log('[Suffixes] Executed command: suffixes.createTodoFile');
+
+      const workspaceFolders = vscode.workspace.workspaceFolders;
+      if (!workspaceFolders || workspaceFolders.length === 0) {
+        vscode.window.showErrorMessage('No workspace open to create the TODO file.');
+        return;
+      }
+      const workspaceRoot = workspaceFolders[0].uri.fsPath;
+
+      // Read settings
+      const config = vscode.workspace.getConfiguration('suffixes');
+      const relativeFilePath = config.get<string>('todo.filePath', '.vscode/TODO.md');
+      const todoFilePath = path.join(workspaceRoot, relativeFilePath);
+      const todoFileUri = vscode.Uri.file(todoFilePath);
+      const dirPath = path.dirname(todoFilePath);
+      const dirUri = vscode.Uri.file(dirPath);
+
+      try {
+        await vscode.workspace.fs.stat(todoFileUri);
+        vscode.window.showInformationMessage(`\`${relativeFilePath}\` already exists.`);
+      } catch (error) {
+        // File does not exist, proceed with creation
+        try {
+          // Ensure directory exists
+          await vscode.workspace.fs.createDirectory(dirUri);
+          // Create empty file
+          await vscode.workspace.fs.writeFile(todoFileUri, new Uint8Array());
+          vscode.window.showInformationMessage(`Created \`${relativeFilePath}\` successfully.`);
+          // Optionally open the file
+          // await vscode.window.showTextDocument(todoFileUri);
+        } catch (creationError) {
+          console.error(`[Suffixes] Failed to create ${relativeFilePath}:`, creationError);
+          vscode.window.showErrorMessage(`Failed to create ${relativeFilePath}: ${creationError}`);
+        }
+      }
+    }
+  );
+  context.subscriptions.push(createTodoFileCommand);
+
+  // Command to reset the TODO.md prompt dismissal state stored in workspaceState
+  const resetDismissalCommand = vscode.commands.registerCommand(
+    'suffixes.resetTodoPromptDismissal',
+    async () => {
+      await context.workspaceState.update('suffixes.prompt.createTodoDismissed', undefined);
+      vscode.window.showInformationMessage(
+        'Prompt for creating `.vscode/TODO.md` has been re-enabled for this workspace.'
+      );
+      console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');
+    }
+  );
+  context.subscriptions.push(resetDismissalCommand);
 
   console.log('[Suffixes] All commands registered.');
 }
