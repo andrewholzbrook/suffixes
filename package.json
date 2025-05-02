@@ -16,23 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "suffixes.showMatchesInFile",
-        "title": "Show Suffix Matches in File"
-      },
-      {
-        "command": "suffixes.refresh",
-        "title": "Refresh",
-        "icon": "$(refresh)"
-      },
-      {
-        "command": "suffixes.toggleNameSort",
-        "title": "Sort by Name",
-        "icon": "$(sort-precedence)"
-      },
-      {
-        "command": "suffixes.toggleCountSort",
-        "title": "Sort by Count",
-        "icon": "$(symbol-numeric)"
+        "command": "suffixes.showDebugMessage",
+        "title": "Suffixes: Show Debug Message"
       }
     ],
     "configuration": {
