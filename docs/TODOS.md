@@ -11,7 +11,6 @@
   - [x] Basic implementation showing static text.
   - [x] Show hovered line content.
   - [x] **Command Links:** Add simple actions (Open tree view, refresh) to hover. I want to see these wired up
-- [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:1, E:2]
 
 ---
 
@@ -32,6 +31,7 @@
   - [ ] **(don\'t understand purpose yet) File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
 - [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
 - [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
+- [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:3, E:2]
 
 ---
 
