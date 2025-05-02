@@ -1,8 +1,9 @@
 import * as vscode from 'vscode';
-import { registerCodeLensProvider } from './codeLens/registerProvider';
+import { registerCodeLensProvider } from './codeLens/registerCodeLensProvider';
 import { registerCommands } from './commands/registerCommands';
-import { TreeProvider } from './tree/TreeProvider';
+import { registerHoverProvider } from './hover/registerProvider';
 import { registerTreeProvider } from './tree/registerTreeProvider';
+import { TreeProvider } from './tree/TreeProvider';
 
 export async function activate(context: vscode.ExtensionContext) {
   console.log('[Suffixes] Activating extension...');
@@ -16,19 +17,7 @@ export async function activate(context: vscode.ExtensionContext) {
     const { treeProvider, codeLensProvider } = _registerProviders(context, workspaceRoot);
     const { treeView } = _createAndRegisterUIComponents(context, treeProvider);
 
-    registerCommands(context, treeProvider);
-
-    // Register the new CodeLens command
-    const logHeadingClickCommand = vscode.commands.registerCommand(
-      'suffixes.logHeadingClick',
-      (heading: string, lineNumber: number) => {
-        console.log(
-          `[Suffixes] CodeLens clicked for heading: "${heading}" on line ${lineNumber + 1}`
-        );
-        vscode.window.showInformationMessage(`CodeLens clicked for: ${heading}`);
-      }
-    );
-    context.subscriptions.push(logHeadingClickCommand);
+    registerCommands(context, treeProvider, treeView);
   } catch (error) {
     console.error('[Suffixes] Error during activation:', error);
     vscode.window.showErrorMessage(`Suffixes activation failed: ${error}`);
@@ -39,12 +28,14 @@ function _registerProviders(context: vscode.ExtensionContext, workspaceRoot: str
   console.log('[Suffixes] Registering providers...');
 
   const codeLensProvider = registerCodeLensProvider(context);
+  const hoverProvider = registerHoverProvider(context);
   const treeProvider = registerTreeProvider(context, workspaceRoot);
 
   console.log('[Suffixes] All providers registered.');
 
   return {
     codeLensProvider,
+    hoverProvider,
     treeProvider,
   };
 }

@@ -2,6 +2,13 @@ import * as vscode from 'vscode';
 import { TreeProvider } from './TreeProvider';
 
 /**
+ * Blurb about connecting this to package.json and usages.
+ */
+const VIEW_IDS = {
+  treeView: 'suffixesTreeView',
+};
+
+/**
  * Creates an instance of TreeProvider, registers it with VS Code,
  * and adds its disposable to the extension context.
  *
@@ -16,10 +23,12 @@ export function registerTreeProvider(
   console.log('[Suffixes] Registering TreeProvider...');
 
   const treeProvider = new TreeProvider(workspaceRoot);
+
   const treeViewRegistration = vscode.window.registerTreeDataProvider(
-    'suffixesTreeView', // Ensure this ID matches package.json
+    VIEW_IDS.treeView,
     treeProvider
   );
+
   context.subscriptions.push(treeViewRegistration);
   console.log('[Suffixes] TreeProvider registered.');
 

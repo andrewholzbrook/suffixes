@@ -25,6 +25,15 @@ export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
     return element;
   }
 
+  /**
+   * Returns the parent of the given element.
+   * Since our tree is flat (only root elements for now), this always returns undefined.
+   */
+  getParent(element: vscode.TreeItem): vscode.ProviderResult<vscode.TreeItem> {
+    // Required for treeView.reveal() to work.
+    return undefined; // Root elements have no parent
+  }
+
   getChildren(element?: vscode.TreeItem): Thenable<vscode.TreeItem[]> {
     // Returns the children for the given element or root if no element is provided.
     if (!this.workspaceRoot) {
