@@ -98,13 +98,10 @@ export function registerCommands(
       } catch (error) {
         // File does not exist, proceed with creation
         try {
-          // Ensure directory exists
           await vscode.workspace.fs.createDirectory(dirUri);
-          // Create empty file
           await vscode.workspace.fs.writeFile(todoFileUri, new Uint8Array());
           vscode.window.showInformationMessage(`Created \`${relativeFilePath}\` successfully.`);
-          // Optionally open the file
-          // await vscode.window.showTextDocument(todoFileUri);
+          await vscode.window.showTextDocument(todoFileUri);
         } catch (creationError) {
           console.error(`[Suffixes] Failed to create ${relativeFilePath}:`, creationError);
           vscode.window.showErrorMessage(`Failed to create ${relativeFilePath}: ${creationError}`);

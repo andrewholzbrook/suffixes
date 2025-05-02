@@ -10,9 +10,13 @@
 
 # Next 3
 
-> **MODE: Execute.** Work the top `[ ]` task. When done: Mark `[x]`, Log to change log (if necessary, and translate verbiage if necessary), Remove, Ask user if ready to commit. **Trigger:** If this list is empty or blocked, go to `# Ready`. (Ref: Full Instructions)
+> **MODE: Execute.** Work the top `[ ]` task. Focus on code implementation. **Trigger:** When coding is done, move to `Clean & Stage`.
 
-- [ ] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
+> **MODE: Clean & Stage.** Review changes, run linters/formatters, remove temporary code/comments. Stage relevant files (`git add`). **Trigger:** When ready to commit, move to `Mark Complete & Commit`.
+
+> **MODE: Mark Complete & Commit.** Mark task `[x]`. Construct commit message. Commit (`git commit`). Remove completed task line from this section. **Trigger:** After commit, check if `# Next 3` needs replenishment or if ready for next task/push.
+
+- [x] **Empty Project: Open Created File:** Open the newly created `.vscode/TODO.md` file for the user (`openTextDocument`, `showTextDocument`). [P:1, E:1]
 - [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
 - [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 
@@ -61,11 +65,4 @@
 
 > **MODE: Capture Ideas.** Add raw thoughts/low-priority items. **Trigger:** Periodically review; promote viable tasks to `# Refine`.
 
-- [ ] **VSCode Extension Exploration - Menus (Context Menus, View Actions, Palette):** Add commands to UI locations using `contributes.menus` in `package.json` (Define placements like `view/item/context`, `view/title`) and use `when` clauses for context-aware visibility. [P:2, E:2]
-- [ ] **VSCode Extension Exploration - Decorations (Editor):** Apply visual styles in the editor using `vscode.window.createTextEditorDecorationType`, `TextEditor.setDecorations`. [P:3, E:2]
-- [ ] **Webviews:** Create custom HTML/CSS/JS panels using `vscode.window.createWebviewPanel`. [P:3, E:3]
-- [ ] **Status Bar Item:** Add item to status bar using `vscode.window.createStatusBarItem`, set properties. [P:3, E:1]
-- [ ] **Configuration Settings:** Allow user customization via Settings UI. [P:2, E:2]
-  - [ ] `
-
----
+- [ ] **VSCode Extension Exploration - Menus (Context Menus, View Actions, Palette):** Add commands to UI locations using `contributes.menus` in `package.json` (Define placements like `
