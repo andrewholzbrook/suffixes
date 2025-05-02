@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
+import { ContextValues } from '../context/values.const';
 
 export class SuffixTreeDataProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
   // Event emitter for when tree data changes
@@ -94,8 +95,10 @@ export class SuffixTreeDataProvider implements vscode.TreeDataProvider<vscode.Tr
             arguments: [treeItem.resourceUri],
           };
           treeItem.iconPath = new vscode.ThemeIcon('file');
+          treeItem.contextValue = ContextValues.FILE;
         } else if (entry.isDirectory()) {
           treeItem.iconPath = new vscode.ThemeIcon('folder');
+          treeItem.contextValue = ContextValues.FOLDER;
         }
         return treeItem;
       });

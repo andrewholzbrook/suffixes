@@ -9,10 +9,10 @@
   - [x] vscode.window.createTreeView (Create view instance - _Done in `createAndRegisterUIComponents`_)
   - [x] vscode.TreeDataProvider (Register provider instance - _Done in `registerSuffixTreeDataProvider`_)
     - [x] Implement getChildren to return hardcoded placeholder TreeItems (e.g., `file1.txt`, `folderA/`). [P:1, E:3] _<- NEXT_
-  - [ ] vscode.TreeItem (Set visual properties like iconPath, description, contextValue). [P:1, E:2]
+  - [x] vscode.TreeItem (Set visual properties like iconPath, description, contextValue). [P:1, E:2]
     - [x] Define and use `ThemeIcon` for basic file/folder icons (`iconPath`). [P:1, E:1]
     - [x] Set a placeholder `description` (e.g., file path). [P:1, E:1]
-    - [ ] Set `contextValue` (e.g., `file`, `folder`) to enable context-specific commands later. [P:1, E:1]
+    - [x] Set `contextValue` (e.g., `file`, `folder`) to enable context-specific commands later. [P:1, E:1]
 - [ ] **Commands:** Implement core commands. [P:1, E:2]
   - [ ] package.json: contributes.commands (Define `suffixes.refreshTree` - _Partially done_, Add/Remove later). [P:1, E:3]
   - [x] vscode.commands.registerCommand (Register handlers - _Done in `registerCommands`_)
