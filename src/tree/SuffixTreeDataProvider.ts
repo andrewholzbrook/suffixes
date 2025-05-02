@@ -84,6 +84,8 @@ export class SuffixTreeDataProvider implements vscode.TreeDataProvider<vscode.Tr
 
         const treeItem = new vscode.TreeItem(entry.name, collapsibleState);
         treeItem.resourceUri = vscode.Uri.file(fullPath);
+        const descriptionGrayText = fullPath;
+        treeItem.description = descriptionGrayText;
 
         if (entry.isFile()) {
           treeItem.command = {
