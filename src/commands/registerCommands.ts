@@ -92,6 +92,14 @@ export function registerCommands(
       const dirPath = path.dirname(todoFilePath);
       const dirUri = vscode.Uri.file(dirPath);
 
+      // Path to the template file within the extension's directory
+      const templatePath = vscode.Uri.joinPath(
+        context.extensionUri,
+        'src',
+        'templates',
+        'initialTodoContent.md'
+      );
+
       try {
         await vscode.workspace.fs.stat(todoFileUri);
         vscode.window.showInformationMessage(`\`${relativeFilePath}\` already exists.`);
@@ -99,7 +107,10 @@ export function registerCommands(
         // File does not exist, proceed with creation
         try {
           await vscode.workspace.fs.createDirectory(dirUri);
-          await vscode.workspace.fs.writeFile(todoFileUri, new Uint8Array());
+          // Read content from template file
+          const initialContentBuffer = await vscode.workspace.fs.readFile(templatePath);
+          // Create file with initial content
+          await vscode.workspace.fs.writeFile(todoFileUri, initialContentBuffer);
           vscode.window.showInformationMessage(`Created \`${relativeFilePath}\` successfully.`);
           await vscode.window.showTextDocument(todoFileUri);
         } catch (creationError) {

@@ -14,7 +14,7 @@
 > **MODE: Clean & Stage.** Review changes, run linters/formatters, remove temporary code/comments. Stage relevant files (`git add`). **Trigger:** When ready to commit, move to `Mark Complete & Commit`.
 > **MODE: Mark Complete, Commit & Log.** Mark task `[x]`. Construct commit message. Commit (`git commit`). Log changes (e.g., in CHANGELOG.md). Remove completed task line from this section. **Trigger:** After logging and removing, check if `# Next 3` needs replenishment or if ready for next task/push.
 
-- [ ] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
+- [x] **Empty Project: Define Initial TODO Content:** Specify the (potentially empty) content for the initial file. [P:2, E:1]
 - [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 
 ---
@@ -24,6 +24,7 @@
 > **MODE: Replenish `# Next 3`.** **Trigger:** When `# Next 3` has space. Select top 1-3 (P/E, sequence). Move them to `# Next 3`. **Trigger:** If this list is empty/low, go to `# Refine`. (Ref: Full Instructions)
 
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
+- [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
 
 ---
 
