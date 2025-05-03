@@ -22,47 +22,51 @@
 
 ## Ready
 
-> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task. **Action:** Outline 1-3 potential sub-tasks based on the description. **Action:** Go to `# Refine` mode to process the selected task (reviewing/adjusting suggested sub-tasks). **Trigger:** If this list is empty when checked, go to `# Refine` (to process backlog/new ideas). (Ref: Full Instructions)
+> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task. **Action:** Outline 1-3 potential sub-tasks based on the description. **Action:** Go to `MODE: Refine Task` in `# Refine` to process the selected task (reviewing/adjusting suggested sub-tasks). **Trigger:** If this list is empty when checked, go to `MODE: Prioritize Refinement List` in `# Refine`. (Ref: Full Instructions)
 
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 - [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1]
 - [ ] **Audit Log Prefixes** [P:3, E:1]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
+- [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
+  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created. [P:2]
+  - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location. [P:2]
 
 ---
 
 ## Refine
 
-> **MODE: Refine Task.** **Trigger:** Activated by `# Ready` (for a specific task) or by other modes needing task preparation. **Action (Specific Task):** Present short description. AI suggests P/E. Present options: 1. Ready (Move to #Ready), 2. Needs Refinement (Collaborate), 3. Discard (Remove). Wait for user choice or free text. **AI Assessment:** [State if Ready or Needs Refinement]. **Stop after processing.** **Action (General):** Review/process list items for `# Ready`. **Output:** Refined task(s) stay here, move to `# Ready`, or are discarded. **Trigger:** If list empty/low, check `# Backlog`. (Ref: Full Instructions)
+> **MODE: Prioritize Refinement List.** **Trigger:** Activated when entering `# Refine` generally (e.g., `# Ready` empty, promotion from `# Backlog`). **Action:** Identify any tasks below lacking a Priority (P) score. **Action:** For each such task, AI suggests P score or collaborates with user to assign one. **Action:** Once all tasks have a P score, automatically sort the entire list below by P score (lowest first). **Trigger:** Transition to `MODE: Refine Task` for the (new) top item. (Ref: Full Instructions)
 
-- [ ] **Code Lens: Implement 'Copy to Clipboard' Command & Basic Provider** [P:2, E:2]
-- [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
+> **MODE: Refine Task.** **Trigger:** Activated by `# Ready` (for a specific task) or by `MODE: Prioritize Refinement List`. **Action (Specific Task):** Present short description. Priority (P) should exist. AI suggests Effort (E) score. Present options: 1. Ready (Move to #Ready), 2. Needs Refinement (Collaborate), 3. Discard (Remove). Wait for user choice or free text. **AI Assessment:** [State if Ready or Needs Refinement]. **Stop after processing.** **Action (General):** Review/process list items for `# Ready`. **Output:** Refined task(s) stay here, move to `# Ready`, or are discarded. **Trigger:** If list empty/low, check `# Backlog`. (Ref: Full Instructions)
+
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
-  - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
-  - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
-  - [ ] **CancellationToken** Explore `token: vscode.CancellationToken` and how it would be used
-  - [ ] **LLM Prompt Integration:** Define convention & display linked prompts. [P:2, E:2]
-  - [ ] **Define Task Format:**
   - [ ] **Parse Task Metadata:** Extract checkbox status, P/E tags, description. [P:1, E:1]
+  - [ ] **Define Task Format:** [P:1]
+  - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
+  - [ ] **LLM Prompt Integration:** Define convention & display linked prompts. [P:2, E:2]
   - [ ] **Configuration:** Allow user to customize hover content. [P:2, E:1]
-  - [ ] **Context from Related Files:** Show snippets/details of linked files. [P:3, E:3]
   - [ ] **(don't understand purpose yet) File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
+  - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out. [P:3]
+  - [ ] **Context from Related Files:** Show snippets/details of linked files. [P:3, E:3]
+  - [ ] **CancellationToken** Explore `token: vscode.CancellationToken` and how it would be used [P:3]
+- [ ] **Code Lens: Implement 'Copy to Clipboard' Command & Basic Provider** [P:2, E:2]
 - [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
 - [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
+- [ ] **AppName Wrangling** Find all instances of current app name "suffixes", veryify it's being used as the app name, make it a const [P:2]
 - [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:3, E:2]
-- [ ] **CodeLens Integration - 2:** Logging when `/docs/TODOS.md# Next Steps` clicked added, explore next steps
-- [ ] **VIEW_IDS** Find a place for this.
-- [ ] **Clean up registerCommands** Some things in here can be extracted out.
-- [ ] **Rename extension** to something a little less specific to the "suffixes" concept.
-- [ ] **AppName Wrangling** Find all instances of current app name "suffixes", veryify it's being used as the app name, make it a const
-- [ ] Split apart command registration into granular registrations, one per file, files in their domain
-- [ ] Move `/src/codeLens/` and `/src/hover/` stuff dealing direction with the TODO.md file into the `/todoFile/` dir.
+- [ ] **CodeLens Integration - 2:** Logging when `/docs/TODOS.md# Next Steps` clicked added, explore next steps [P:3]
+- [ ] **VIEW_IDS** Find a place for this. [P:3]
+- [ ] **Clean up registerCommands** Some things in here can be extracted out. [P:3]
+- [ ] **Split apart command registration** into granular registrations, one per file, files in their domain [P:3]
+- [ ] **Move /src/codeLens/ and /src/hover/ stuff dealing direction with the TODO.md file into the /todoFile/ dir.** [P:3]
+- [ ] **Rename extension** to something a little less specific to the "suffixes" concept. [P:4]
 
 ---
 
 ## Backlog
 
-> **MODE: Capture Ideas.** Add raw thoughts/low-priority items. **Trigger:** Periodically review; promote viable tasks to `# Refine`.
+> **MODE: Capture Ideas.** Add raw thoughts/low-priority items. **Trigger:** Periodically review; promote viable tasks and trigger `MODE: Prioritize Refinement List` in `# Refine`.
 
 - [ ] **VSCode Extension Exploration - Menus (Context Menus, View Actions, Palette):** Add commands to UI locations using `contributes.menus` in `package.json` (Define placements like `view/item/context`, `view/title`) and use `when` clauses for context-aware visibility. [P:2, E:2]
 - [ ] **VSCode Extension Exploration - Decorations (Editor):** Apply visual styles in the editor using `vscode.window.createTextEditorDecorationType`, `TextEditor.setDecorations`. [P:3, E:2]
