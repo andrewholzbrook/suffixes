@@ -20,7 +20,7 @@
 
 ## Ready
 
-> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task from this list. Go to `# Refine` mode to process _only this task_. **Trigger:** If this list is empty when checked, go to `# Refine` (to process backlog/new ideas). (Ref: Full Instructions)
+> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task. **Action:** Outline 1-3 potential sub-tasks based on the description. **Action:** Go to `# Refine` mode to process the selected task (reviewing/adjusting suggested sub-tasks). **Trigger:** If this list is empty when checked, go to `# Refine` (to process backlog/new ideas). (Ref: Full Instructions)
 
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
