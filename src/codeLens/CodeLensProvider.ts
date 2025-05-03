@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 /**
- * Provides CodeLenses for items in the /docs/TODOS.md file.
+ * Provides CodeLenses for items in the configured TODO file (e.g., .vscode/TODO.md).
  */
 export class CodeLensProvider implements vscode.CodeLensProvider {
   /**
@@ -17,22 +17,72 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
     console.log(`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}`);
 
     const lenses: vscode.CodeLens[] = [];
-    const targetHeading = '# Next Steps';
+    const next3Heading = '## Next 3';
+    const readyHeading = '## Ready';
+    const refineHeading = '## Refine';
+    const backlogHeading = '## Backlog';
 
     for (let i = 0; i < document.lineCount; i++) {
       const line = document.lineAt(i);
-      if (line.text.trim() === targetHeading) {
+
+      // Check for Next 3
+      if (line.text.trim() === next3Heading) {
         const range = new vscode.Range(i, 0, i, line.text.length);
         const command: vscode.Command = {
           title: 'Log Heading Click',
           command: 'suffixes.logHeadingClick',
-          arguments: [targetHeading, i], // Pass heading text and line number
+          arguments: [next3Heading, i],
         };
         lenses.push(new vscode.CodeLens(range, command));
         console.log(
-          `[TodoCodeLensProvider] Found heading "${targetHeading}" on line ${i + 1}. Adding CodeLens.`
+          `[TodoCodeLensProvider] Found heading "${next3Heading}" on line ${i + 1}. Adding CodeLens.`
         );
-        break; // Found it, no need to check further lines for this example
+        // No break, continue checking other lines/headings
+      }
+
+      // Check for Ready
+      if (line.text.trim() === readyHeading) {
+        const range = new vscode.Range(i, 0, i, line.text.length);
+        const command: vscode.Command = {
+          title: 'Log Heading Click',
+          command: 'suffixes.logHeadingClick',
+          arguments: [readyHeading, i],
+        };
+        lenses.push(new vscode.CodeLens(range, command));
+        console.log(
+          `[TodoCodeLensProvider] Found heading "${readyHeading}" on line ${i + 1}. Adding CodeLens.`
+        );
+        // No break
+      }
+
+      // Check for Refine
+      if (line.text.trim() === refineHeading) {
+        const range = new vscode.Range(i, 0, i, line.text.length);
+        const command: vscode.Command = {
+          title: 'Log Heading Click',
+          command: 'suffixes.logHeadingClick',
+          arguments: [refineHeading, i],
+        };
+        lenses.push(new vscode.CodeLens(range, command));
+        console.log(
+          `[TodoCodeLensProvider] Found heading "${refineHeading}" on line ${i + 1}. Adding CodeLens.`
+        );
+        // No break
+      }
+
+      // Check for Backlog
+      if (line.text.trim() === backlogHeading) {
+        const range = new vscode.Range(i, 0, i, line.text.length);
+        const command: vscode.Command = {
+          title: 'Log Heading Click',
+          command: 'suffixes.logHeadingClick',
+          arguments: [backlogHeading, i],
+        };
+        lenses.push(new vscode.CodeLens(range, command));
+        console.log(
+          `[TodoCodeLensProvider] Found heading "${backlogHeading}" on line ${i + 1}. Adding CodeLens.`
+        );
+        // No break
       }
     }
 

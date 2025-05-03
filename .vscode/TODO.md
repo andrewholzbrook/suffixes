@@ -8,17 +8,17 @@
 
 ---
 
-# Next 3
+## Next 3
 
 > **MODE: Execute.** Work the top `[ ]` task. Focus on code implementation. **Trigger:** When coding is done, move to `Clean & Stage`.
 > **MODE: Clean & Stage.** Review changes, run linters/formatters, remove temporary code/comments. Stage relevant files (`git add`). **Trigger:** When ready to commit, move to `Mark Complete & Commit`.
 > **MODE: Mark Complete, Commit & Log.** Mark task `[x]`. Construct commit message. Commit (`git commit`). Log changes (e.g., in CHANGELOG.md). Remove completed task line from this section. **Trigger:** After logging and removing, check if `# Next 3` needs replenishment or if ready for next task/push.
 
-- [ ] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
+- [x] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
 
 ---
 
-# Ready
+## Ready
 
 > **MODE: Replenish `# Next 3`.** **Trigger:** When `# Next 3` has space. Select top 1-3 (P/E, sequence). Move them to `# Next 3`. **Trigger:** If this list is empty/low, go to `# Refine`. (Ref: Full Instructions)
 
@@ -27,10 +27,12 @@
 
 ---
 
-# Refine
+## Refine
 
 > **MODE: Prepare for `# Ready`.** **Trigger:** When `# Ready` needs items. Clarify tasks, break down, add P/E. Move defined tasks to `# Ready`. **Trigger:** If this list is empty/low, go to `# Backlog`. (Ref: Full Instructions)
 
+- [ ] **Code Lens - Prompt Copy to Clipboard**
+- [ ] **Audit Log Prefixes** Not all logs are using the same prefix
 - [ ] **Configuration:** Add setting to customize the tone/wording of user prompts (e.g., the create TODO.md prompt). [P:3, E:1]
 - [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
   - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created.
@@ -58,7 +60,7 @@
 
 ---
 
-# Backlog
+## Backlog
 
 > **MODE: Capture Ideas.** Add raw thoughts/low-priority items. **Trigger:** Periodically review; promote viable tasks to `# Refine`.
 

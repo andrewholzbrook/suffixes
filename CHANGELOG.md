@@ -43,3 +43,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Command `suffixes.createTodoFile` now populates the new `.vscode/TODO.md` with a basic template structure from `src/templates/initialTodoContent.md`.
+
+### Changed
+
+- HoverProvider and CodeLensProvider registrations now use the configured `suffixes.todo.filePath` setting instead of a hardcoded path.
+- CodeLensProvider now adds lenses for `## Next 3`, `## Ready`, `## Refine`, and `## Backlog` headings.
+
+### Fixed
+
+- **Activation Error:** Resolved `CodeExpectedError` caused by unregistered `suffixes.prompt.disableCreateTodo` configuration setting.
+- **Activation Race Condition:** Ensured commands are registered before potentially showing the TODO file creation prompt during activation.
+- **TODO File Creation:** Implemented the actual file creation logic in the `suffixes.createTodoFile` command.
