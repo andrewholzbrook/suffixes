@@ -10,17 +10,17 @@
 
 ## Next 3
 
-> **MODE: Execute.** Work the top `[ ]` task. Focus on code implementation. **Trigger:** When coding is done, move to `Clean & Stage`.
-> **MODE: Clean & Stage.** Review changes, run linters/formatters, remove temporary code/comments. Stage relevant files (`git add`). **Trigger:** When ready to commit, move to `Mark Complete & Commit`.
-> **MODE: Mark Complete, Commit & Log.** Mark task `[x]`. Construct commit message. Commit (`git commit`). Log changes (e.g., in CHANGELOG.md). Remove completed task line from this section. **Trigger:** After logging and removing, check if `# Next 3` needs replenishment or if ready for next task/push.
-
-- [x] **Refactor: Update File References:** Audit code (HoverProvider, TreeView, etc.) and update any references to use the decided `.vscode/TODO.md` path. [P:2, E:1]
+> **MODE: Execute.** Verify top `[ ]` task is refined (clear scope, P/E). Work the task. Focus on code implementation. **Action:** Review/QA the implementation. **Trigger:** When ready, move to `Stage & Clean`.
+> **MODE: Stage & Clean.** Review code changes, run linters/formatters, remove temporary code/comments. Stage relevant _code_ files (`git add <code files>`). **Trigger:** When ready, move to `Mark Complete`.
+> **MODE: Mark Complete.** Change `[ ]` to `[x]` for the task in TODO.md. Log changes (e.g., in CHANGELOG.md, optional). **Trigger:** Move to `Stage Completion`.
+> **MODE: Stage Completion.** Stage the updated TODO.md (`git add TODO.md`) and CHANGELOG.md (if changed). **Trigger:** If more `[ ]` tasks exist in `# Next 3`, return to `Execute`. **Trigger:** If no more `[ ]` tasks, or ready to bundle changes, move to `Commit Staged Changes`.
+> **MODE: Commit Staged Changes.** **Action:** Review final staged changes (`git diff --staged`). **Action:** Group related completed `[x]` tasks (if multiple). **Action:** Construct commit message(s). **Action:** Confirm readiness to commit with the user. **Action (on confirmation):** Commit (`git commit`). **Action (after successful commit):** Remove corresponding `[x]` task lines from this section. **Trigger:** After commit(s) and removal, check if `# Next 3` needs replenishment (go to `# Ready`).
 
 ---
 
 ## Ready
 
-> **MODE: Replenish `# Next 3`.** **Trigger:** When `# Next 3` has space. Select top 1-3 (P/E, sequence). Move them to `# Next 3`. **Trigger:** If this list is empty/low, go to `# Refine`. (Ref: Full Instructions)
+> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task from this list. Go to `# Refine` mode to process _only this task_. **Trigger:** If this list is empty when checked, go to `# Refine` (to process backlog/new ideas). (Ref: Full Instructions)
 
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
@@ -29,7 +29,7 @@
 
 ## Refine
 
-> **MODE: Prepare for `# Ready`.** **Trigger:** When `# Ready` needs items. Clarify tasks, break down, add P/E. Move defined tasks to `# Ready`. **Trigger:** If this list is empty/low, go to `# Backlog`. (Ref: Full Instructions)
+> **MODE: Refine Task.** **Trigger:** Activated by `# Ready` (for a specific task) or by other modes needing task preparation. **Action (Specific Task):** Review description, P/E. Ask user: "Does this need clarification or breakdown?". If yes, collaborate. If no, confirm readiness. **Stop after processing.** **Action (General):** Review/process list items for `# Ready`. **Output:** Refined task(s) stay here or move to `# Ready`. **Trigger:** If list empty/low, check `# Backlog`. (Ref: Full Instructions)
 
 - [ ] **Code Lens - Prompt Copy to Clipboard**
 - [ ] **Audit Log Prefixes** Not all logs are using the same prefix
