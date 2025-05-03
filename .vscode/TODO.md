@@ -16,21 +16,22 @@
 > **MODE: Stage Completion.** Stage the updated TODO.md (`git add TODO.md`) and CHANGELOG.md (if changed). **Trigger:** If more `[ ]` tasks exist in `# Next 3`, return to `Execute`. **Trigger:** If no more `[ ]` tasks, or ready to bundle changes, move to `Commit Staged Changes`.
 > **MODE: Commit Staged Changes.** **Action:** Review final staged changes (`git diff --staged`). **Action:** Group related completed `[x]` tasks (if multiple). **Action:** Construct commit message(s). **Action:** Confirm readiness to commit with the user. **Action (on confirmation):** Commit (`git commit`). **Action (after successful commit):** Remove corresponding `[x]` task lines from this section. **Trigger:** After commit(s) and removal, check if `# Next 3` needs replenishment (go to `# Ready`).
 
+- [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
+  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created. [P:2]
+  - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location. [P:2]
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
+- [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1]
 
 ---
 
 ## Ready
 
-> **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task. **Action:** Outline 1-3 potential sub-tasks based on the description. **Action:** Go to `MODE: Refine Task` in `# Refine` to process the selected task (reviewing/adjusting suggested sub-tasks). **Trigger:** If this list is empty when checked, go to `MODE: Prioritize Refinement List` in `# Refine`. (Ref: Full Instructions)
+> **MODE: Fill Next 3.** **Trigger:** Invoked when `# Next 3` has space _and_ suitable, refined tasks exist here. **Action:** Select top 1-3 refined tasks (P/E exists, scope clear) from this list. Move them to `# Next 3`. **Trigger:** Go to `MODE: Execute` in `# Next 3`.
 
-- [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
-- [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1]
+> **MODE: Initiate Refinement.** **Trigger:** Invoked when `# Next 3` has space _but_ the top task here needs refinement (missing P/E, unclear scope, etc.). **Action:** Select the top task needing refinement. **Action:** Outline 1-3 potential sub-tasks. **Action:** Go to `MODE: Refine Task` in `# Refine`. **Trigger:** If this list is empty when replenishment is needed, go to `MODE: Prioritize Refinement List` in `# Refine`. (Ref: Full Instructions)
+
 - [ ] **Audit Log Prefixes** [P:3, E:1]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
-- [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
-  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created. [P:2]
-  - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location. [P:2]
 
 ---
 
