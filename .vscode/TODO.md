@@ -16,6 +16,8 @@
 > **MODE: Stage Completion.** Stage the updated TODO.md (`git add TODO.md`) and CHANGELOG.md (if changed). **Trigger:** If more `[ ]` tasks exist in `# Next 3`, return to `Execute`. **Trigger:** If no more `[ ]` tasks, or ready to bundle changes, move to `Commit Staged Changes`.
 > **MODE: Commit Staged Changes.** **Action:** Review final staged changes (`git diff --staged`). **Action:** Group related completed `[x]` tasks (if multiple). **Action:** Construct commit message(s). **Action:** Confirm readiness to commit with the user. **Action (on confirmation):** Commit (`git commit`). **Action (after successful commit):** Remove corresponding `[x]` task lines from this section. **Trigger:** After commit(s) and removal, check if `# Next 3` needs replenishment (go to `# Ready`).
 
+- [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
+
 ---
 
 ## Ready
@@ -23,20 +25,18 @@
 > **MODE: Initiate Refinement.** **Trigger:** When `# Next 3` needs items (empty/low) AND this list is not empty. **Action:** Select the top task. **Action:** Outline 1-3 potential sub-tasks based on the description. **Action:** Go to `# Refine` mode to process the selected task (reviewing/adjusting suggested sub-tasks). **Trigger:** If this list is empty when checked, go to `# Refine` (to process backlog/new ideas). (Ref: Full Instructions)
 
 - [ ] **Empty Project: Update UI/Command States:** Adjust Tree View display and command availability based on file existence or user choice. [P:2, E:2]
+- [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1]
+- [ ] **Audit Log Prefixes** [P:3, E:1]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
 
 ---
 
 ## Refine
 
-> **MODE: Refine Task.** **Trigger:** Activated by `# Ready` (for a specific task) or by other modes needing task preparation. **Action (Specific Task):** Review description, P/E. Ask user: "Does this need clarification or breakdown?". If yes, collaborate. If no, confirm readiness. **Stop after processing.** **Action (General):** Review/process list items for `# Ready`. **Output:** Refined task(s) stay here or move to `# Ready`. **Trigger:** If list empty/low, check `# Backlog`. (Ref: Full Instructions)
+> **MODE: Refine Task.** **Trigger:** Activated by `# Ready` (for a specific task) or by other modes needing task preparation. **Action (Specific Task):** Present short description. AI suggests P/E. Present options: 1. Ready (Move to #Ready), 2. Needs Refinement (Collaborate), 3. Discard (Remove). Wait for user choice or free text. **AI Assessment:** [State if Ready or Needs Refinement]. **Stop after processing.** **Action (General):** Review/process list items for `# Ready`. **Output:** Refined task(s) stay here, move to `# Ready`, or are discarded. **Trigger:** If list empty/low, check `# Backlog`. (Ref: Full Instructions)
 
-- [ ] **Code Lens - Prompt Copy to Clipboard**
-- [ ] **Audit Log Prefixes** Not all logs are using the same prefix
-- [ ] **Configuration:** Add setting to customize the tone/wording of user prompts (e.g., the create TODO.md prompt). [P:3, E:1]
+- [ ] **Code Lens: Implement 'Copy to Clipboard' Command & Basic Provider** [P:2, E:2]
 - [ ] **Empty Project User Story:** Define the user experience and expected behavior when the extension is activated in a completely empty workspace. [P:1, E:1]
-  - [ ] **Future Guidance Strategy:** Plan how to populate/guide the user _after_ the initial empty `.vscode/TODO.md` file is created.
-  - [ ] **Documentation:** Document the scaffolding feature, including the default `.vscode/TODO.md` location.
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
   - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out.
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
@@ -64,4 +64,10 @@
 
 > **MODE: Capture Ideas.** Add raw thoughts/low-priority items. **Trigger:** Periodically review; promote viable tasks to `# Refine`.
 
-- [ ] **VSCode Extension Exploration - Menus (Context Menus, View Actions, Palette):** Add commands to UI locations using `contributes.menus` in `package.json` (Define placements like `
+- [ ] **VSCode Extension Exploration - Menus (Context Menus, View Actions, Palette):** Add commands to UI locations using `contributes.menus` in `package.json` (Define placements like `view/item/context`, `view/title`) and use `when` clauses for context-aware visibility. [P:2, E:2]
+- [ ] **VSCode Extension Exploration - Decorations (Editor):** Apply visual styles in the editor using `vscode.window.createTextEditorDecorationType`, `TextEditor.setDecorations`. [P:3, E:2]
+- [ ] **Webviews:** Create custom HTML/CSS/JS panels using `vscode.window.createWebviewPanel`. [P:3, E:3]
+- [ ] **Status Bar Item:** Add item to status bar using `vscode.window.createStatusBarItem`, set properties. [P:3, E:1]
+- [ ] **Configuration:** Add setting to customize the tone/wording of user prompts (e.g., the create TODO.md prompt). [P:3, E:1]
+- [ ] **Configuration Settings:** Allow user customization via Settings UI. [P:2, E:2]
+  - [ ] `
