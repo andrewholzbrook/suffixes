@@ -3,7 +3,6 @@ import { registerCodeLensProvider } from './codeLens/registerCodeLensProvider';
 import { registerHoverProvider } from './hover/registerProvider';
 import { registerTreeProvider } from './tree/registerTreeProvider';
 
-// --- End Helper Function ---
 export function registerProviders(
   context: vscode.ExtensionContext,
   workspaceRoot: string | undefined
