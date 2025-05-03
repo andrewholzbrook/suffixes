@@ -8,6 +8,12 @@ The goals of this application are thus:
 
 - Improve architectural clarity and efficiency in [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) projects through consistent management of suffix naming strategies.
 
+### Initial User Experience (Empty Workspace)
+
+- When the extension is activated in a workspace without a `.vscode/TODO.md` file, it should gracefully handle this state.
+- Ideally, it should prompt the user or provide a clear action (e.g., a command, a button in the view) to create a default `.vscode/TODO.md` file.
+- The goal is to guide the user towards utilizing the extension's core functionality without being intrusive or causing errors in an uninitialized workspace.
+
 # Potential Future Extensions / Major Features
 
 - **Direct Suffix Application:** An extension or feature set dedicated to automatically renaming files or modifying their content based on the configured suffixes. This would involve handling file system operations directly, managing potential conflicts, and providing user controls for application and reversal. (Derived from initial FileSystem Goals)
