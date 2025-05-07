@@ -2,7 +2,7 @@
 
 ---
 
-- [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1]
+- [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1] - Goal: Establish a clear system for how LLM prompts are marked or referenced within markdown task files (e.g., `TODOS.md`). - This convention will enable a CodeLens to appear near these prompts. - The CodeLens will include a "Copy Command" to easily copy the identified prompt's content to the clipboard.
 
 ---
 
