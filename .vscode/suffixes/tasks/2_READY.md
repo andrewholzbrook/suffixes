@@ -6,5 +6,4 @@
 
 ---
 
-- [ ] **Audit Log Prefixes** [P:3, E:1]
 - [ ] **Lint & Fix:** Run linter and fix the issues. It's okay for some of the items to be fixed with lint comments if it's obviously a thing we'll build upon later.
