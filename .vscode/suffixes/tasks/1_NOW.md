@@ -36,13 +36,13 @@
   - [x] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
   - [x] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
   - [x] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`
-  - [ ] `src/tree/createTreeView.ts:4` - `console.log('[Suffixes] Creating UI components...');`
-  - [ ] `src/tree/createTreeView.ts:12` - `console.log('[Suffixes] Tree view created and registered for disposal.');`
-  - [ ] `src/todoFile/maybePromptToCreateTodoFile.ts:10` - `console.log('[Suffixes] No workspace root found, skipping TODO file check.');`
-  - [ ] `src/tree/registerTreeProvider.ts:22` - `console.log('[Suffixes] Registering TreeProvider...');`
-  - [ ] `src/tree/registerTreeProvider.ts:32` - `console.log('[Suffixes] TreeProvider registered.');`
-  - [ ] `src/hover/HoverProvider.ts:37` - `console.log(\`[Suffixes] Hover detected on line ${position.line + 1}: \"${lineText}\"\`);`
-  - [ ] `src/tree/TreeProvider.ts:17` - `console.log('[Suffixes] Refresh command triggered. Firing onDidChangeTreeData...');`
+  - [x] `src/tree/createTreeView.ts:4` - `console.log('[Suffixes] Creating UI components...');`
+  - [x] `src/tree/createTreeView.ts:12` - `console.log('[Suffixes] Tree view created and registered for disposal.');`
+  - [x] `src/todoFile/maybePromptToCreateTodoFile.ts:10` - `console.log('[Suffixes] No workspace root found, skipping TODO file check.');`
+  - [x] `src/tree/registerTreeProvider.ts:22` - `console.log('[Suffixes] Registering TreeProvider...');`
+  - [x] `src/tree/registerTreeProvider.ts:32` - `console.log('[Suffixes] TreeProvider registered.');`
+  - [x] `src/hover/HoverProvider.ts:37` - `console.log(\`[Suffixes] Hover detected on line ${position.line + 1}: \"${lineText}\"\`);`
+  - [x] `src/tree/TreeProvider.ts:17` - `console.log('[Suffixes] Refresh command triggered. Firing onDidChangeTreeData...');`
 
 ---
 

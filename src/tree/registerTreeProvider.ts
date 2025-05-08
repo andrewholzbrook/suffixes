@@ -20,7 +20,7 @@ export function registerTreeProvider(
   context: vscode.ExtensionContext,
   workspaceRoot: string | undefined
 ): TreeProvider {
-  console.log('[Suffixes] Registering TreeProvider...');
+  console.log('[Suffixes:registerTreeProvider] Registering TreeProvider...');
 
   const treeProvider = new TreeProvider(workspaceRoot);
 
@@ -30,7 +30,7 @@ export function registerTreeProvider(
   );
 
   context.subscriptions.push(treeViewRegistration);
-  console.log('[Suffixes] TreeProvider registered.');
+  console.log('[Suffixes:registerTreeProvider] TreeProvider registered.');
 
   return treeProvider;
 }

@@ -15,7 +15,7 @@ export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
   }
 
   refresh(): void {
-    console.log('[Suffixes] Refresh command triggered. Firing onDidChangeTreeData...');
+    console.log('[Suffixes:TreeProvider] Refresh command triggered. Firing onDidChangeTreeData...');
     this._onDidChangeTreeData.fire();
   }
 

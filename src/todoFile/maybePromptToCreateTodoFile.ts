@@ -8,6 +8,8 @@ export async function maybePromptToCreateTodoFile(
   if (workspaceRoot) {
     await checkAndPromptForTodoFile(workspaceRoot, context);
   } else {
-    console.log('[Suffixes] No workspace root found, skipping TODO file check.');
+    console.log(
+      '[Suffixes:maybePromptToCreateTodoFile] No workspace root found, skipping TODO file check.'
+    );
   }
 }

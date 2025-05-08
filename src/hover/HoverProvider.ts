@@ -35,7 +35,10 @@ export class HoverProvider implements vscode.HoverProvider {
     hoverText.appendMarkdown(`[Open Suffixes View](${openTreeViewCommandUri}) | `);
     hoverText.appendMarkdown(`[Refresh Suffixes View](${refreshTreeCommandUri})`);
 
-    console.log(`[Suffixes] Hover detected on line ${position.line + 1}: "${lineText}"`);
+    // Log the hover event with line number and text
+    console.log(
+      `[Suffixes:HoverProvider] Hover detected on line ${position.line + 1}: "${lineText}"`
+    );
 
     // Return the hover object for the specific range of the line's non-whitespace content
     const hoverRange = new vscode.Range(
