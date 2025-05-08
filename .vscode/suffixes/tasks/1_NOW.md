@@ -34,8 +34,8 @@
   - [x] `src/todoFile/checkAndPromptForTodoFile.ts:54` - `console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');`
   - [x] `src/todoFile/checkAndPromptForTodoFile.ts:65` - `console.log(\`[Suffixes] Create ${relativeFilePath} prompt closed without selection.\`);`
   - [x] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
-  - [ ] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
-  - [ ] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`
+  - [x] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
+  - [x] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`
   - [ ] `src/tree/createTreeView.ts:4` - `console.log('[Suffixes] Creating UI components...');`
   - [ ] `src/tree/createTreeView.ts:12` - `console.log('[Suffixes] Tree view created and registered for disposal.');`
   - [ ] `src/todoFile/maybePromptToCreateTodoFile.ts:10` - `console.log('[Suffixes] No workspace root found, skipping TODO file check.');`

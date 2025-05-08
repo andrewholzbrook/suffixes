@@ -6,7 +6,7 @@ import { createTreeView } from './tree/createTreeView';
 import { getWorkspaceRoot } from './workspace/getWorkspaceRoot';
 
 export async function activate(context: vscode.ExtensionContext) {
-  console.log('[Suffixes] Activating extension...');
+  console.log('[Suffixes:extension] Activating extension...');
 
   try {
     const workspaceRoot = getWorkspaceRoot(context);
@@ -22,5 +22,5 @@ export async function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-  console.log('[Suffixes] Deactivating extension...');
+  console.log('[Suffixes:extension] Deactivating extension...');
 }
