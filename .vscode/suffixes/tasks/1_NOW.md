@@ -26,13 +26,13 @@
   - [x] `src/codeLens/CodeLensProvider.ts:66` - `console.log(...);`
   - [x] `src/codeLens/CodeLensProvider.ts:81` - `console.log(...);`
   - [x] `src/codeLens/registerCodeLensProvider.ts:16` - `console.log(\`[Suffixes] Registering CodeLensProvider for pattern: ${globPattern}\`);`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:15` - `console.log(\`[Suffixes] Found existing TODO file: ${relativeFilePath}\`);`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:19` - `console.log(\`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.\`);`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:26` - `console.log('[Suffixes] Create TODO prompt is disabled by configuration. Skipping.');`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:31` - `console.log(\`[Suffixes] Prompting user to create ${relativeFilePath}\`);`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:50` - `console.log(\`[Suffixes] User chose to create ${relativeFilePath}\`);`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:54` - `console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');`
-  - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:65` - `console.log(\`[Suffixes] Create ${relativeFilePath} prompt closed without selection.\`);`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:15` - `console.log(\`[Suffixes] Found existing TODO file: ${relativeFilePath}\`);`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:19` - `console.log(\`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.\`);`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:26` - `console.log('[Suffixes] Create TODO prompt is disabled by configuration. Skipping.');`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:31` - `console.log(\`[Suffixes] Prompting user to create ${relativeFilePath}\`);`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:50` - `console.log(\`[Suffixes] User chose to create ${relativeFilePath}\`);`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:54` - `console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');`
+  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:65` - `console.log(\`[Suffixes] Create ${relativeFilePath} prompt closed without selection.\`);`
   - [ ] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
   - [ ] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
   - [ ] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`

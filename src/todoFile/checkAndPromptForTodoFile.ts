@@ -13,23 +13,29 @@ export async function checkAndPromptForTodoFile(
 
   try {
     await vscode.workspace.fs.stat(workspaceFileUri);
-    console.log(`[Suffixes] Found existing TODO file: ${relativeFilePath}`);
+    console.log(
+      `[Suffixes:checkAndPromptForTodoFile] Found existing TODO file: ${relativeFilePath}`
+    );
     return; // File exists, no need to prompt
   } catch (error) {
     // File doesn't exist, proceed to check config
-    console.log(`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.`);
+    console.log(
+      `[Suffixes:checkAndPromptForTodoFile] TODO file not found at ${relativeFilePath}. Checking configuration.`
+    );
   }
 
   // Read prompt disable setting *after* file check
   const disablePrompt = config.get<boolean>('prompt.disableCreateTodo');
 
   if (disablePrompt) {
-    console.log('[Suffixes] Create TODO prompt is disabled by configuration. Skipping.');
+    console.log(
+      '[Suffixes:checkAndPromptForTodoFile] Create TODO prompt is disabled by configuration. Skipping.'
+    );
     return;
   }
 
   // Prompt is needed
-  console.log(`[Suffixes] Prompting user to create ${relativeFilePath}.`);
+  console.log(`[Suffixes:checkAndPromptForTodoFile] Prompting user to create ${relativeFilePath}.`);
   await _showAndHandleCreateTodoPrompt(config, relativeFilePath);
 }
 
@@ -48,11 +54,13 @@ async function _showAndHandleCreateTodoPrompt(
   );
 
   if (selection === createOption) {
-    console.log(`[Suffixes] User chose to create ${relativeFilePath}.`);
+    console.log(`[Suffixes:checkAndPromptForTodoFile] User chose to create ${relativeFilePath}.`);
     // Execute the command to create the file
     await vscode.commands.executeCommand('suffixes.createTodoFile');
   } else if (selection === dismissOption) {
-    console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');
+    console.log(
+      '[Suffixes:checkAndPromptForTodoFile] User dismissed the create TODO prompt. Updating configuration.'
+    );
     try {
       await config.update('prompt.disableCreateTodo', true, vscode.ConfigurationTarget.Workspace);
       vscode.window.showInformationMessage(
@@ -63,6 +71,8 @@ async function _showAndHandleCreateTodoPrompt(
       vscode.window.showErrorMessage('Failed to disable the prompt. Please check console logs.');
     }
   } else {
-    console.log(`[Suffixes] Create ${relativeFilePath} prompt closed without selection.`);
+    console.log(
+      `[Suffixes:checkAndPromptForTodoFile] Create ${relativeFilePath} prompt closed without selection.`
+    );
   }
 }
