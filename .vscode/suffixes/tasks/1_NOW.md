@@ -33,7 +33,7 @@
   - [x] `src/todoFile/checkAndPromptForTodoFile.ts:50` - `console.log(\`[Suffixes] User chose to create ${relativeFilePath}\`);`
   - [x] `src/todoFile/checkAndPromptForTodoFile.ts:54` - `console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');`
   - [x] `src/todoFile/checkAndPromptForTodoFile.ts:65` - `console.log(\`[Suffixes] Create ${relativeFilePath} prompt closed without selection.\`);`
-  - [ ] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
+  - [x] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
   - [ ] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
   - [ ] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`
   - [ ] `src/tree/createTreeView.ts:4` - `console.log('[Suffixes] Creating UI components...');`

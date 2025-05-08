@@ -10,7 +10,7 @@ export function registerHoverProvider(context: vscode.ExtensionContext) {
   // Ensure the pattern is suitable for a glob (relative to workspace)
   const globPattern = `**/${todoFilePathPattern.startsWith('./') ? todoFilePathPattern.substring(2) : todoFilePathPattern}`;
 
-  console.log(`[Suffixes] Registering HoverProvider for pattern: ${globPattern}`);
+  console.log(`[Suffixes:registerProvider] Registering HoverProvider for pattern: ${globPattern}`);
 
   context.subscriptions.push(
     vscode.languages.registerHoverProvider(
