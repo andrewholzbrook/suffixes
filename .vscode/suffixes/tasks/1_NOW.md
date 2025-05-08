@@ -25,7 +25,7 @@
   - [x] `src/codeLens/CodeLensProvider.ts:51` - `console.log(...);`
   - [x] `src/codeLens/CodeLensProvider.ts:66` - `console.log(...);`
   - [x] `src/codeLens/CodeLensProvider.ts:81` - `console.log(...);`
-  - [ ] `src/codeLens/registerCodeLensProvider.ts:16` - `console.log(\`[Suffixes] Registering CodeLensProvider for pattern: ${globPattern}\`);`
+  - [x] `src/codeLens/registerCodeLensProvider.ts:16` - `console.log(\`[Suffixes] Registering CodeLensProvider for pattern: ${globPattern}\`);`
   - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:15` - `console.log(\`[Suffixes] Found existing TODO file: ${relativeFilePath}\`);`
   - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:19` - `console.log(\`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.\`);`
   - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:26` - `console.log('[Suffixes] Create TODO prompt is disabled by configuration. Skipping.');`
