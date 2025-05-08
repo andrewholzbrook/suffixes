@@ -6,17 +6,15 @@
 
 ---
 
-- [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:2]
-  - [ ] **Parse Task Metadata:** Extract checkbox status, P/E tags, description. [P:1, E:1]
-  - [ ] **Define Task Format:** [P:1]
+- [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:3]
+  - [ ] **Parse Task Metadata:** Parse new rich inline property format (IDs, relationships, custom key-values), build internal task graph. [P:1, E:2]
+  - [ ] **Define Task Format:** Standardize one-liner Markdown tasks with properties (ID, Effort, BV, Status, relationships, etc.) embedded within an HTML comment block (e.g., `<!-- {ID:task123 ...} -->`) at the start of the task line. [P:1, E:1]
   - [ ] **Command Links (continued):** Add actions (Mark Done, Open File, Copy) to hover. [P:2, E:2]
   - [ ] **LLM Prompt Integration:** Define convention & display linked prompts. [P:2, E:2]
   - [ ] **Configuration:** Allow user to customize hover content. [P:2, E:1]
-  - [ ] **(don't understand purpose yet) File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
-  - [ ] **Clean up HoverProvider.ts** Some things in here can be extracted out. [P:3]
+  - [ ] **Clean up HoverProvider.ts:** Some things in here can be extracted out. [P:3, E:1]
   - [ ] **Context from Related Files:** Show snippets/details of linked files. [P:3, E:3]
-  - [ ] **CancellationToken** Explore `token: vscode.CancellationToken` and how it would be used [P:3]
-- [ ] **Code Lens: Implement 'Copy to Clipboard' Command & Basic Provider** [P:2, E:2]
+  - [ ] **CancellationToken:** Explore `token: vscode.CancellationToken` and how it would be used. [P:3, E:1]
 - [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
 - [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
 - [ ] **AppName Wrangling** Find all instances of current app name "suffixes", veryify it's being used as the app name, make it a const [P:2]
@@ -57,4 +55,17 @@
 - [ ] Discuss {domain}.{layer} Naming Convention Pros/Cons [P:3, E:1]
 - [ ] Refine {domain}.{layer} Naming Convention (Nesting, Shared, Tests) [P:3, E:2]
 - [ ] Integrate {domain}.{layer} Convention with Suffixes Extension Features [P:2, E:2]
+- [ ] **Feature: Generate Actionable Work Order from Task** [P:2, E:2]
+  - [ ] Define Work Order Markdown template (pre-filled fields for scope, assessment, arch impact, linked tickets). [P:2, E:1]
+  - [ ] Implement command to select a task and generate a pre-filled Work Order file (e.g., in .vscode/work_orders/). [P:2, E:2]
+  - [ ] Add CodeLens action "Create Work Order" to eligible tasks. [P:2, E:1]
+- [ ] **Feature: CodeLens - Add "Play a Recap" for Tasks** [P:3, E:3]
+  - [ ] Define data points for recap (current state, basic git history for line/ID, relationships, work order summary). [P:3, E:1]
+  - [ ] Implement Git history parsing for a specific task line/ID (MVP: last change, creation date via git log). [P:3, E:2]
+  - [ ] Design and implement recap presentation (MVP: Textual summary in showInformationMessage or quick pick). [P:3, E:1]
+  - [ ] Add 'Play Recap' button to task CodeLenses. [P:3, E:1]
 - [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1] - Goal: Establish a clear system for how LLM prompts are marked or referenced within markdown task files (e.g., `TODOS.md`). - This convention will enable a CodeLens to appear near these prompts. - The CodeLens will include a "Copy Command" to easily copy the identified prompt's content to the clipboard.
+
+- [ ] **[NEEDS CLARIFICATION] File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
+
+- [ ] **[SCOPE NEEDS DETAIL] Code Lens: Implement 'Copy to Clipboard' Command & Basic Provider** [P:2, E:2]

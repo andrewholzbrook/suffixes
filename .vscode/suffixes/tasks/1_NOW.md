@@ -2,47 +2,7 @@
 
 ---
 
-- [ ] **Audit Log Prefixes** [P:3, E:1]
-  - [x] `src/registerProviders.ts:9` - `console.log('[Suffixes] Registering providers...');`
-  - [x] `src/registerProviders.ts:15` - `console.log('[Suffixes] All providers registered.');`
-  - [x] `src/commands/registerCommands.ts:10` - `console.log('[Suffixes] Registering commands...');`
-  - [x] `src/commands/registerCommands.ts:22` - `console.log('[Suffixes] Executed command: suffixes.refreshTree');`
-  - [x] `src/commands/registerCommands.ts:28` - `console.log('[Suffixes] Command suffixes.openTreeView: Handler started.');`
-  - [x] `src/commands/registerCommands.ts:30` - `console.log('[Suffixes] Command suffixes.openTreeView: Getting children...');`
-  - [x] `src/commands/registerCommands.ts:32` - `console.log(...);`
-  - [x] `src/commands/registerCommands.ts:39` - `console.log(...);`
-  - [x] `src/commands/registerCommands.ts:43` - `console.log('[Suffixes] Command suffixes.openTreeView: Reveal element finished.');`
-  - [x] `src/commands/registerCommands.ts:45` - `console.log(...);`
-  - [x] `src/commands/registerCommands.ts:51` - `console.log('[Suffixes] Command suffixes.openTreeView: Focused view container.');`
-  - [x] `src/commands/registerCommands.ts:57` - `console.log('[Suffixes] Executed command: suffixes.openTreeView');`
-  - [x] `src/commands/registerCommands.ts:65` - `console.log(...);`
-  - [x] `src/commands/registerCommands.ts:77` - `console.log('[Suffixes] Executed command: suffixes.createTodoFile');`
-  - [x] `src/commands/registerCommands.ts:132` - `console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');`
-  - [x] `src/commands/registerCommands.ts:137` - `console.log('[Suffixes] All commands registered.');`
-  - [x] `src/commands/showDebugMessage.ts:4` - `console.log('[Suffixes] showDebugMessage command executed.');`
-  - [x] `src/codeLens/CodeLensProvider.ts:16` - `console.log(\`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}\`);`
-  - [x] `src/codeLens/CodeLensProvider.ts:36` - `console.log(...);`
-  - [x] `src/codeLens/CodeLensProvider.ts:51` - `console.log(...);`
-  - [x] `src/codeLens/CodeLensProvider.ts:66` - `console.log(...);`
-  - [x] `src/codeLens/CodeLensProvider.ts:81` - `console.log(...);`
-  - [x] `src/codeLens/registerCodeLensProvider.ts:16` - `console.log(\`[Suffixes] Registering CodeLensProvider for pattern: ${globPattern}\`);`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:15` - `console.log(\`[Suffixes] Found existing TODO file: ${relativeFilePath}\`);`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:19` - `console.log(\`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.\`);`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:26` - `console.log('[Suffixes] Create TODO prompt is disabled by configuration. Skipping.');`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:31` - `console.log(\`[Suffixes] Prompting user to create ${relativeFilePath}\`);`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:50` - `console.log(\`[Suffixes] User chose to create ${relativeFilePath}\`);`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:54` - `console.log('[Suffixes] User dismissed the create TODO prompt. Updating configuration.');`
-  - [x] `src/todoFile/checkAndPromptForTodoFile.ts:65` - `console.log(\`[Suffixes] Create ${relativeFilePath} prompt closed without selection.\`);`
-  - [x] `src/hover/registerProvider.ts:12` - `console.log(\`[Suffixes] Registering HoverProvider for pattern: ${globPattern}\`);`
-  - [x] `src/extension.ts:8` - `console.log('[Suffixes] Activating extension...');`
-  - [x] `src/extension.ts:24` - `console.log('[Suffixes] Deactivating extension...');`
-  - [x] `src/tree/createTreeView.ts:4` - `console.log('[Suffixes] Creating UI components...');`
-  - [x] `src/tree/createTreeView.ts:12` - `console.log('[Suffixes] Tree view created and registered for disposal.');`
-  - [x] `src/todoFile/maybePromptToCreateTodoFile.ts:10` - `console.log('[Suffixes] No workspace root found, skipping TODO file check.');`
-  - [x] `src/tree/registerTreeProvider.ts:22` - `console.log('[Suffixes] Registering TreeProvider...');`
-  - [x] `src/tree/registerTreeProvider.ts:32` - `console.log('[Suffixes] TreeProvider registered.');`
-  - [x] `src/hover/HoverProvider.ts:37` - `console.log(\`[Suffixes] Hover detected on line ${position.line + 1}: \"${lineText}\"\`);`
-  - [x] `src/tree/TreeProvider.ts:17` - `console.log('[Suffixes] Refresh command triggered. Firing onDidChangeTreeData...');`
+- [ ] **Process Refinement List:** Review tasks below, assign P/E scores, and refine scope per modes. [P:1, E:1]
 
 ---
 
