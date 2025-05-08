@@ -5,20 +5,20 @@
 - [ ] **Audit Log Prefixes** [P:3, E:1]
   - [x] `src/registerProviders.ts:9` - `console.log('[Suffixes] Registering providers...');`
   - [x] `src/registerProviders.ts:15` - `console.log('[Suffixes] All providers registered.');`
-  - [ ] `src/commands/registerCommands.ts:10` - `console.log('[Suffixes] Registering commands...');`
-  - [ ] `src/commands/registerCommands.ts:22` - `console.log('[Suffixes] Executed command: suffixes.refreshTree');`
-  - [ ] `src/commands/registerCommands.ts:28` - `console.log('[Suffixes] Command suffixes.openTreeView: Handler started.');`
-  - [ ] `src/commands/registerCommands.ts:30` - `console.log('[Suffixes] Command suffixes.openTreeView: Getting children...');`
-  - [ ] `src/commands/registerCommands.ts:32` - `console.log(...);`
-  - [ ] `src/commands/registerCommands.ts:39` - `console.log(...);`
-  - [ ] `src/commands/registerCommands.ts:43` - `console.log('[Suffixes] Command suffixes.openTreeView: Reveal element finished.');`
-  - [ ] `src/commands/registerCommands.ts:45` - `console.log(...);`
-  - [ ] `src/commands/registerCommands.ts:51` - `console.log('[Suffixes] Command suffixes.openTreeView: Focused view container.');`
-  - [ ] `src/commands/registerCommands.ts:57` - `console.log('[Suffixes] Executed command: suffixes.openTreeView');`
-  - [ ] `src/commands/registerCommands.ts:65` - `console.log(...);`
-  - [ ] `src/commands/registerCommands.ts:77` - `console.log('[Suffixes] Executed command: suffixes.createTodoFile');`
-  - [ ] `src/commands/registerCommands.ts:132` - `console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');`
-  - [ ] `src/commands/registerCommands.ts:137` - `console.log('[Suffixes] All commands registered.');`
+  - [x] `src/commands/registerCommands.ts:10` - `console.log('[Suffixes] Registering commands...');`
+  - [x] `src/commands/registerCommands.ts:22` - `console.log('[Suffixes] Executed command: suffixes.refreshTree');`
+  - [x] `src/commands/registerCommands.ts:28` - `console.log('[Suffixes] Command suffixes.openTreeView: Handler started.');`
+  - [x] `src/commands/registerCommands.ts:30` - `console.log('[Suffixes] Command suffixes.openTreeView: Getting children...');`
+  - [x] `src/commands/registerCommands.ts:32` - `console.log(...);`
+  - [x] `src/commands/registerCommands.ts:39` - `console.log(...);`
+  - [x] `src/commands/registerCommands.ts:43` - `console.log('[Suffixes] Command suffixes.openTreeView: Reveal element finished.');`
+  - [x] `src/commands/registerCommands.ts:45` - `console.log(...);`
+  - [x] `src/commands/registerCommands.ts:51` - `console.log('[Suffixes] Command suffixes.openTreeView: Focused view container.');`
+  - [x] `src/commands/registerCommands.ts:57` - `console.log('[Suffixes] Executed command: suffixes.openTreeView');`
+  - [x] `src/commands/registerCommands.ts:65` - `console.log(...);`
+  - [x] `src/commands/registerCommands.ts:77` - `console.log('[Suffixes] Executed command: suffixes.createTodoFile');`
+  - [x] `src/commands/registerCommands.ts:132` - `console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');`
+  - [x] `src/commands/registerCommands.ts:137` - `console.log('[Suffixes] All commands registered.');`
   - [ ] `src/commands/showDebugMessage.ts:4` - `console.log('[Suffixes] showDebugMessage command executed.');`
   - [ ] `src/codeLens/CodeLensProvider.ts:16` - `console.log(\`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}\`);`
   - [ ] `src/codeLens/CodeLensProvider.ts:36` - `console.log(...);`
