@@ -19,7 +19,7 @@
   - [x] `src/commands/registerCommands.ts:77` - `console.log('[Suffixes] Executed command: suffixes.createTodoFile');`
   - [x] `src/commands/registerCommands.ts:132` - `console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');`
   - [x] `src/commands/registerCommands.ts:137` - `console.log('[Suffixes] All commands registered.');`
-  - [ ] `src/commands/showDebugMessage.ts:4` - `console.log('[Suffixes] showDebugMessage command executed.');`
+  - [x] `src/commands/showDebugMessage.ts:4` - `console.log('[Suffixes] showDebugMessage command executed.');`
   - [ ] `src/codeLens/CodeLensProvider.ts:16` - `console.log(\`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}\`);`
   - [ ] `src/codeLens/CodeLensProvider.ts:36` - `console.log(...);`
   - [ ] `src/codeLens/CodeLensProvider.ts:51` - `console.log(...);`
