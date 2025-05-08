@@ -20,11 +20,11 @@
   - [x] `src/commands/registerCommands.ts:132` - `console.log('[Suffixes] Executed command: suffixes.resetTodoPromptDismissal');`
   - [x] `src/commands/registerCommands.ts:137` - `console.log('[Suffixes] All commands registered.');`
   - [x] `src/commands/showDebugMessage.ts:4` - `console.log('[Suffixes] showDebugMessage command executed.');`
-  - [ ] `src/codeLens/CodeLensProvider.ts:16` - `console.log(\`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}\`);`
-  - [ ] `src/codeLens/CodeLensProvider.ts:36` - `console.log(...);`
-  - [ ] `src/codeLens/CodeLensProvider.ts:51` - `console.log(...);`
-  - [ ] `src/codeLens/CodeLensProvider.ts:66` - `console.log(...);`
-  - [ ] `src/codeLens/CodeLensProvider.ts:81` - `console.log(...);`
+  - [x] `src/codeLens/CodeLensProvider.ts:16` - `console.log(\`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}\`);`
+  - [x] `src/codeLens/CodeLensProvider.ts:36` - `console.log(...);`
+  - [x] `src/codeLens/CodeLensProvider.ts:51` - `console.log(...);`
+  - [x] `src/codeLens/CodeLensProvider.ts:66` - `console.log(...);`
+  - [x] `src/codeLens/CodeLensProvider.ts:81` - `console.log(...);`
   - [ ] `src/codeLens/registerCodeLensProvider.ts:16` - `console.log(\`[Suffixes] Registering CodeLensProvider for pattern: ${globPattern}\`);`
   - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:15` - `console.log(\`[Suffixes] Found existing TODO file: ${relativeFilePath}\`);`
   - [ ] `src/todoFile/checkAndPromptForTodoFile.ts:19` - `console.log(\`[Suffixes] TODO file not found at ${relativeFilePath}. Checking configuration.\`);`

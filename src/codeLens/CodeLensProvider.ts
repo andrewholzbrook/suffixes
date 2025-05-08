@@ -14,7 +14,9 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
     document: vscode.TextDocument,
     token: vscode.CancellationToken
   ): vscode.ProviderResult<vscode.CodeLens[]> {
-    console.log(`[TodoCodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}`);
+    console.log(
+      `[Suffixes:CodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}`
+    );
 
     const lenses: vscode.CodeLens[] = [];
     const next3Heading = '## Next 3';
@@ -35,7 +37,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
         };
         lenses.push(new vscode.CodeLens(range, command));
         console.log(
-          `[TodoCodeLensProvider] Found heading "${next3Heading}" on line ${i + 1}. Adding CodeLens.`
+          `[Suffixes:CodeLensProvider] Found heading "${next3Heading}" on line ${i + 1}. Adding CodeLens.`
         );
         // No break, continue checking other lines/headings
       }
@@ -50,7 +52,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
         };
         lenses.push(new vscode.CodeLens(range, command));
         console.log(
-          `[TodoCodeLensProvider] Found heading "${readyHeading}" on line ${i + 1}. Adding CodeLens.`
+          `[Suffixes:CodeLensProvider] Found heading "${readyHeading}" on line ${i + 1}. Adding CodeLens.`
         );
         // No break
       }
@@ -65,7 +67,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
         };
         lenses.push(new vscode.CodeLens(range, command));
         console.log(
-          `[TodoCodeLensProvider] Found heading "${refineHeading}" on line ${i + 1}. Adding CodeLens.`
+          `[Suffixes:CodeLensProvider] Found heading "${refineHeading}" on line ${i + 1}. Adding CodeLens.`
         );
         // No break
       }
@@ -80,7 +82,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
         };
         lenses.push(new vscode.CodeLens(range, command));
         console.log(
-          `[TodoCodeLensProvider] Found heading "${backlogHeading}" on line ${i + 1}. Adding CodeLens.`
+          `[Suffixes:CodeLensProvider] Found heading "${backlogHeading}" on line ${i + 1}. Adding CodeLens.`
         );
         // No break
       }
