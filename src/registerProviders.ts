@@ -13,7 +13,7 @@ export function registerProviders(
   const hoverProvider = registerHoverProvider(context);
   const treeProvider = registerTreeProvider(context, workspaceRoot);
 
-  console.log('[Suffixes] All providers registered.');
+  console.log('[Suffixes:registerProviders] All providers registered.');
 
   return {
     codeLensProvider,

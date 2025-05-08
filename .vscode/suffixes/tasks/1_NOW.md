@@ -4,7 +4,7 @@
 
 - [ ] **Audit Log Prefixes** [P:3, E:1]
   - [x] `src/registerProviders.ts:9` - `console.log('[Suffixes] Registering providers...');`
-  - [ ] `src/registerProviders.ts:15` - `console.log('[Suffixes] All providers registered.');`
+  - [x] `src/registerProviders.ts:15` - `console.log('[Suffixes] All providers registered.');`
   - [ ] `src/commands/registerCommands.ts:10` - `console.log('[Suffixes] Registering commands...');`
   - [ ] `src/commands/registerCommands.ts:22` - `console.log('[Suffixes] Executed command: suffixes.refreshTree');`
   - [ ] `src/commands/registerCommands.ts:28` - `console.log('[Suffixes] Command suffixes.openTreeView: Handler started.');`
