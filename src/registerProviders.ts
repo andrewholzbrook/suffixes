@@ -7,7 +7,7 @@ export function registerProviders(
   context: vscode.ExtensionContext,
   workspaceRoot: string | undefined
 ) {
-  console.log('[Suffixes] Registering providers...');
+  console.log('[Suffixes:registerProviders] Registering providers...');
 
   const codeLensProvider = registerCodeLensProvider(context);
   const hoverProvider = registerHoverProvider(context);
