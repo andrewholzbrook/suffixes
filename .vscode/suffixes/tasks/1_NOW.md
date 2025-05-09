@@ -2,7 +2,14 @@
 
 ---
 
-- [ ] **Process Refinement List:** Review tasks below, assign P/E scores, and refine scope per modes. [P:1, E:1]
+- [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
+
+  - [x] Create `src/logger.ts` utility using `vscode.LogOutputChannel`.
+  - [x] Refactor first log in `src/extension.ts` to use the new Logger.
+  - [x] Refactor `deactivate` log in `src/extension.ts` to use new Logger.
+  - [x] Refactor logs in `src/registerProviders.ts` to use new Logger.
+
+- [x] **Documentation & Guidance:** Instruct users on setting up repo folders with Obsidian, including best practices for using Git (e.g., with the Obsidian Git plugin) for versioning and syncing the vault content. [P:3, E:1]
 
 ---
 

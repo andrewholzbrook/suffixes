@@ -6,6 +6,13 @@
 
 ---
 
+## BLOCKED
+
+> **Purpose:** This section lists tasks from the `# REFINE` or `# READY` lists that cannot proceed due to external dependencies, unanswered questions, or other impediments.
+> **Action:** Regularly review items here. When a blocker is resolved, move the task back to the appropriate section (e.g., `# REFINE` for further refinement if needed, or `# READY` if it's now actionable). Add a comment indicating why it was blocked and how it was unblocked.
+
+---
+
 - [ ] **Hover Provider Integration:** Implement `vscode.HoverProvider` to show contextual info (e.g., LLM prompts, file details) on hover within `TODOS.md`. [P:1, E:3]
   - [ ] **Parse Task Metadata:** Parse new rich inline property format (IDs, relationships, custom key-values), build internal task graph. [P:1, E:2]
   - [ ] **Define Task Format:** Standardize one-liner Markdown tasks with properties (ID, Effort, BV, Status, relationships, etc.) embedded within an HTML comment block (e.g., `<!-- {ID:task123 ...} -->`) at the start of the task line. [P:1, E:1]
@@ -15,7 +22,6 @@
   - [ ] **Clean up HoverProvider.ts:** Some things in here can be extracted out. [P:3, E:1]
   - [ ] **Context from Related Files:** Show snippets/details of linked files. [P:3, E:3]
   - [ ] **CancellationToken:** Explore `token: vscode.CancellationToken` and how it would be used. [P:3, E:1]
-- [ ] **Logging:** Standardize logging format and levels (e.g., use vscode.LogOutputChannel). [P:2, E:2]
 - [ ] **TODOS.md Standardization:** Define and apply a consistent format/structure for this file, potentially leveraging CodeLens/Hovers. [P:2, E:2]
 - [ ] **AppName Wrangling** Find all instances of current app name "suffixes", veryify it's being used as the app name, make it a const [P:2]
 - [ ] **Suffix Logic Integration:** Connect TreeDataProvider to suffix detection logic. [P:3, E:2]
@@ -65,6 +71,27 @@
   - [ ] Design and implement recap presentation (MVP: Textual summary in showInformationMessage or quick pick). [P:3, E:1]
   - [ ] Add 'Play Recap' button to task CodeLenses. [P:3, E:1]
 - [ ] **Code Lens: Define Prompt Identification Convention for Copy Command** [P:2, E:1] - Goal: Establish a clear system for how LLM prompts are marked or referenced within markdown task files (e.g., `TODOS.md`). - This convention will enable a CodeLens to appear near these prompts. - The CodeLens will include a "Copy Command" to easily copy the identified prompt's content to the clipboard.
+
+- [ ] **Feature: Obsidian Interoperability & Enhanced Markdown Tooling** [P:2, E:3]
+
+  - [ ] **Research Obsidian Plugin Compatibility:** Investigate plugins (Tasks, Dataview, Mermaid, Excalidraw) for syntax/frontmatter conventions. [P:2, E:2]
+  - [ ] **Define Conventions for "Open in Obsidian":** Establish folder structure/markers for Obsidian-friendly areas. [P:3, E:1]
+  - [ ] **Task Format Alignment/Transformation (If Needed):** Explore adapting our format or providing transformers for Obsidian plugin syntax. [P:2, E:2]
+  - [ ] **Diagramming Integration (e.g., Mermaid):** Ensure easy embedding and explore preview/rendering options. [P:2, E:2]
+  - [ ] **(Optional) VS Code Commands for Obsidian Actions:** e.g., "Open folder in Obsidian". [P:3, E:1]
+
+- [ ] **Feature: CodeLens - Contextual Diff Summary for Current Task** [P:2, E:3]
+
+  - [ ] **CodeLens Provider Logic:** Implement logic to display a "Summarize Diff for Task" CodeLens on files with Git modifications (when a task is active in `1_NOW.md`). [P:2, E:1]
+  - [ ] **Git Diff Retrieval:** Implement functionality to get the `git diff` output for the current file. [P:2, E:1]
+  - [ ] **Current Task Retrieval:** Implement functionality to read and parse the current active task from `.vscode/suffixes/tasks/1_NOW.md`. [P:2, E:1]
+  - [ ] **Summarization - MVP:** Implement a basic, non-AI summary (e.g., "File X has N additions, M deletions. Current task: [Task Title]"). [P:2, E:1]
+  - [ ] **Summarization - Advanced (LLM-based):** Design and implement LLM-powered summarization. [P:1, E:3]
+    - [ ] Construct LLM prompt including diff, task details, and user-defined style/format. [P:1, E:1]
+    - [ ] Integrate with an LLM API for generating the summary. [P:1, E:2]
+    - [ ] Address LLM API key management and obtain user opt-in for sending diff/task data. [P:1, E:1]
+  - [ ] **User Configuration for Summary Style/Format:** Define VS Code settings for predefined summary formats and/or user-described styles (for LLM). [P:2, E:2]
+  - [ ] **Display Summary:** Determine how to present the generated summary to the user (e.g., information message, new untitled document, webview panel). [P:3, E:1]
 
 - [ ] **[NEEDS CLARIFICATION] File/Symbol Linking:** Detect and link file paths/symbols in descriptions. [P:2, E:2]
 

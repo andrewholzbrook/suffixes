@@ -1,4 +1,7 @@
 import * as vscode from 'vscode';
+import { Logger } from '../logger';
+
+const logger = new Logger('CodeLensProvider');
 
 /**
  * Provides CodeLenses for items in the configured TODO file (e.g., .vscode/TODO.md).
@@ -14,7 +17,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
     document: vscode.TextDocument,
     token: vscode.CancellationToken
   ): vscode.ProviderResult<vscode.CodeLens[]> {
-    console.log(
+    logger.info(
       `[Suffixes:CodeLensProvider] provideCodeLenses triggered for: ${document.uri.fsPath}`
     );
 
