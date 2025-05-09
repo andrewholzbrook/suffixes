@@ -1,10 +1,12 @@
-import * as path from 'path';
 import * as vscode from 'vscode';
+
+import * as path from 'path';
 
 // --- Helper function to check for TODO.md ---
 export async function checkAndPromptForTodoFile(
   workspaceRoot: string,
-  context: vscode.ExtensionContext
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _context: vscode.ExtensionContext
 ) {
   const config = vscode.workspace.getConfiguration('suffixes');
   const relativeFilePath = config.get<string>('todo.filePath', '.vscode/TODO.md');

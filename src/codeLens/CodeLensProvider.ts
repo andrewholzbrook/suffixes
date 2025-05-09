@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 import { Logger } from '../logger';
 
 const logger = new Logger('CodeLensProvider');
@@ -15,6 +16,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
    */
   provideCodeLenses(
     document: vscode.TextDocument,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     token: vscode.CancellationToken
   ): vscode.ProviderResult<vscode.CodeLens[]> {
     logger.info(

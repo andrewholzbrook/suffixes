@@ -43,6 +43,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Command `suffixes.createTodoFile` now populates the new `.vscode/TODO.md` with a basic template structure from `src/templates/initialTodoContent.md`.
+- **Logging:** Standardized logging format and levels.
+  - Implemented a new `Logger` utility (`src/logger.ts`) using `vscode.LogOutputChannel`.
+  - Migrated existing logging in `extension.ts` and `registerProviders.ts` to the new `Logger`.
+- **Documentation:** Added guidance on setting up Obsidian repository folders with Git, including best practices for versioning and syncing vault content.
 
 ### Changed
 

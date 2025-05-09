@@ -1,7 +1,9 @@
+import * as vscode from 'vscode';
+
 import * as fs from 'fs';
 import * as path from 'path';
-import * as vscode from 'vscode';
-import { ContextValues } from '../context/values.const';
+
+import { contextValues } from '../context/values.const';
 
 export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
   // Event emitter for when tree data changes
@@ -29,12 +31,18 @@ export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
    * Returns the parent of the given element.
    * Since our tree is flat (only root elements for now), this always returns undefined.
    */
-  getParent(element: vscode.TreeItem): vscode.ProviderResult<vscode.TreeItem> {
+  getParent(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _element: vscode.TreeItem
+  ): vscode.ProviderResult<vscode.TreeItem> {
     // Required for treeView.reveal() to work.
     return undefined; // Root elements have no parent
   }
 
-  getChildren(element?: vscode.TreeItem): Thenable<vscode.TreeItem[]> {
+  getChildren(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    element?: vscode.TreeItem
+  ): Thenable<vscode.TreeItem[]> {
     // Returns the children for the given element or root if no element is provided.
     if (!this.workspaceRoot) {
       vscode.window.showInformationMessage('No folder or workspace opened');
@@ -105,10 +113,10 @@ export class TreeProvider implements vscode.TreeDataProvider<vscode.TreeItem> {
             arguments: [treeItem.resourceUri],
           };
           treeItem.iconPath = new vscode.ThemeIcon('file');
-          treeItem.contextValue = ContextValues.FILE;
+          treeItem.contextValue = contextValues.file;
         } else if (entry.isDirectory()) {
           treeItem.iconPath = new vscode.ThemeIcon('folder');
-          treeItem.contextValue = ContextValues.FOLDER;
+          treeItem.contextValue = contextValues.folder;
         }
         return treeItem;
       });

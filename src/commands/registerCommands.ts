@@ -1,5 +1,7 @@
-import path from 'path';
 import * as vscode from 'vscode';
+
+import path from 'path';
+
 import { TreeProvider } from '../tree/TreeProvider';
 import { showDebugMessage } from './showDebugMessage';
 
@@ -50,6 +52,7 @@ export function registerCommands(
         );
         await vscode.commands.executeCommand('workbench.view.explorer');
         await vscode.commands.executeCommand('workbench.action.focusSideBar');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await treeView.reveal(undefined as any, { focus: true });
         console.log(
           '[Suffixes:registerCommands] Command suffixes.openTreeView: Focused view container.'

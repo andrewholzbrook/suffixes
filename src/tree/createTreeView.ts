@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 import { TreeProvider } from './TreeProvider';
 
 export function createTreeView(context: vscode.ExtensionContext, treeProvider: TreeProvider) {

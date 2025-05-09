@@ -4,7 +4,8 @@ export class HoverProvider implements vscode.HoverProvider {
   provideHover(
     document: vscode.TextDocument,
     position: vscode.Position,
-    token: vscode.CancellationToken
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _token: vscode.CancellationToken
   ): vscode.ProviderResult<vscode.Hover> {
     const line = document.lineAt(position.line);
     const lineText = line.text.trim(); // Get the text of the hovered line

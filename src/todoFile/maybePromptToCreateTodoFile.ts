@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 import { checkAndPromptForTodoFile } from './checkAndPromptForTodoFile';
 
 export async function maybePromptToCreateTodoFile(

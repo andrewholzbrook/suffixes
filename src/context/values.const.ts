@@ -4,7 +4,7 @@
  *
  * @see https://code.visualstudio.com/api/references/when-clause-contexts
  */
-export const ContextValues = {
+export const contextValues = {
   /**
    * Represents a file item in the Suffixes tree view.
    * Used in `SuffixTreeDataProvider.ts`:
@@ -12,7 +12,7 @@ export const ContextValues = {
    * Used in `package.json` (example):
    *   `"when": "view == suffixesTreeView && viewItem == file"`
    */
-  FILE: 'file',
+  file: 'file',
 
   /**
    * Represents a folder item in the Suffixes tree view.
@@ -21,5 +21,5 @@ export const ContextValues = {
    * Used in `package.json` (example):
    *   `"when": "view == suffixesTreeView && viewItem == folder"`
    */
-  FOLDER: 'folder',
+  folder: 'folder',
 };

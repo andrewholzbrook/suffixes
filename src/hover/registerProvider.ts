@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 import { HoverProvider } from './HoverProvider';
 
 export function registerHoverProvider(context: vscode.ExtensionContext) {
